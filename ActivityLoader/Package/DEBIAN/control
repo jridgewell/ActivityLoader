@@ -1,0 +1,17 @@
+Package: name.ridgewell.ActivityLoader
+Name: ActivityLoader
+Version: 0.1-1
+Description: 
+Section: PreferenceBundles
+Depends: firmware (>= 5.0), mobilesubstrate, preferenceloader
+Conflicts: 
+Replaces: 
+Priority: optional
+Architecture: iphoneos-arm
+Author: Justin Ridgewell
+dev: 
+Homepage: 
+Depiction: 
+Maintainer: 
+Icon: 
+

@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2132191216E5B14100DD6753 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191116E5B14100DD6753 /* Foundation.framework */; };
+		2132191416E5B14100DD6753 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191316E5B14100DD6753 /* UIKit.framework */; };
+		2132191616E5B14100DD6753 /* Preferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191516E5B14100DD6753 /* Preferences.framework */; };
+		2132192116E5B14100DD6753 /* ActivityLoaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2132192016E5B14100DD6753 /* ActivityLoaderController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2132190E16E5B14100DD6753 /* ActivityLoader.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityLoader.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		2132191116E5B14100DD6753 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2132191316E5B14100DD6753 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2132191516E5B14100DD6753 /* Preferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Preferences.framework; path = Library/Frameworks/Preferences.framework; sourceTree = DEVELOPER_DIR; };
+		2132191A16E5B14100DD6753 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		2132191B16E5B14100DD6753 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		2132191D16E5B14100DD6753 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		2132191E16E5B14100DD6753 /* ActivityLoader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActivityLoader-Info.plist"; sourceTree = "<group>"; };
+		2132191F16E5B14100DD6753 /* ActivityLoaderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityLoaderController.h; sourceTree = "<group>"; };
+		2132192016E5B14100DD6753 /* ActivityLoaderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityLoaderController.m; sourceTree = "<group>"; };
+		2132192516E5B14100DD6753 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ActivityLoader.plist; path = Package/Library/PreferenceLoader/Preferences/ActivityLoader.plist; sourceTree = "<group>"; };
+		2132192816E5B14100DD6753 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ActivityLoader.plist; path = Package/Library/PreferenceBundles/ActivityLoader.bundle/ActivityLoader.plist; sourceTree = "<group>"; };
+		2132192916E5B14100DD6753 /* ActivityLoaderIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ActivityLoaderIcon.png; path = Package/Library/PreferenceBundles/ActivityLoader.bundle/ActivityLoaderIcon.png; sourceTree = "<group>"; };
+		2132192A16E5B14100DD6753 /* ActivityLoaderIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ActivityLoaderIcon@2x.png"; path = "Package/Library/PreferenceBundles/ActivityLoader.bundle/ActivityLoaderIcon@2x.png"; sourceTree = "<group>"; };
+		2132192F16E5B14100DD6753 /* name.ridgewell.ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = name.ridgewell.ActivityLoader.plist; path = Package/var/mobile/Library/Preferences/name.ridgewell.ActivityLoader.plist; sourceTree = "<group>"; };
+		2132193016E5B14100DD6753 /* ActivityLoader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActivityLoader-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2132190A16E5B14100DD6753 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2132191216E5B14100DD6753 /* Foundation.framework in Frameworks */,
+				2132191416E5B14100DD6753 /* UIKit.framework in Frameworks */,
+				2132191616E5B14100DD6753 /* Preferences.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2132190416E5B14100DD6753 = {
+			isa = PBXGroup;
+			children = (
+				2132191716E5B14100DD6753 /* ActivityLoader */,
+				2132191016E5B14100DD6753 /* Frameworks */,
+				2132190F16E5B14100DD6753 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2132190F16E5B14100DD6753 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2132190E16E5B14100DD6753 /* ActivityLoader.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2132191016E5B14100DD6753 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2132191116E5B14100DD6753 /* Foundation.framework */,
+				2132191316E5B14100DD6753 /* UIKit.framework */,
+				2132191516E5B14100DD6753 /* Preferences.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2132191716E5B14100DD6753 /* ActivityLoader */ = {
+			isa = PBXGroup;
+			children = (
+				2132191F16E5B14100DD6753 /* ActivityLoaderController.h */,
+				2132192016E5B14100DD6753 /* ActivityLoaderController.m */,
+				2132191816E5B14100DD6753 /* Package */,
+				2132191C16E5B14100DD6753 /* Supporting Files */,
+			);
+			path = ActivityLoader;
+			sourceTree = "<group>";
+		};
+		2132191816E5B14100DD6753 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				2132191916E5B14100DD6753 /* DEBIAN */,
+				2132192216E5B14100DD6753 /* Library */,
+				2132192B16E5B14100DD6753 /* var */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		2132191916E5B14100DD6753 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				2132191A16E5B14100DD6753 /* control.txt */,
+				2132191B16E5B14100DD6753 /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		2132191C16E5B14100DD6753 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2132191D16E5B14100DD6753 /* PackageVersion.plist */,
+				2132191E16E5B14100DD6753 /* ActivityLoader-Info.plist */,
+				2132193016E5B14100DD6753 /* ActivityLoader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2132192216E5B14100DD6753 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				2132192316E5B14100DD6753 /* PreferenceLoader */,
+				2132192616E5B14100DD6753 /* PreferenceBundles */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		2132192316E5B14100DD6753 /* PreferenceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				2132192416E5B14100DD6753 /* Preferences */,
+			);
+			name = PreferenceLoader;
+			sourceTree = "<group>";
+		};
+		2132192416E5B14100DD6753 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2132192516E5B14100DD6753 /* ActivityLoader.plist */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		2132192616E5B14100DD6753 /* PreferenceBundles */ = {
+			isa = PBXGroup;
+			children = (
+				2132192716E5B14100DD6753 /* ___PACKAGENAME___.bundle */,
+			);
+			name = PreferenceBundles;
+			sourceTree = "<group>";
+		};
+		2132192716E5B14100DD6753 /* ___PACKAGENAME___.bundle */ = {
+			isa = PBXGroup;
+			children = (
+				2132192816E5B14100DD6753 /* ActivityLoader.plist */,
+				2132192916E5B14100DD6753 /* ActivityLoaderIcon.png */,
+				2132192A16E5B14100DD6753 /* ActivityLoaderIcon@2x.png */,
+			);
+			name = "___PACKAGENAME___.bundle";
+			sourceTree = "<group>";
+		};
+		2132192B16E5B14100DD6753 /* var */ = {
+			isa = PBXGroup;
+			children = (
+				2132192C16E5B14100DD6753 /* mobile */,
+			);
+			name = var;
+			sourceTree = "<group>";
+		};
+		2132192C16E5B14100DD6753 /* mobile */ = {
+			isa = PBXGroup;
+			children = (
+				2132192D16E5B14100DD6753 /* Library */,
+			);
+			name = mobile;
+			sourceTree = "<group>";
+		};
+		2132192D16E5B14100DD6753 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				2132192E16E5B14100DD6753 /* Preferences */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		2132192E16E5B14100DD6753 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2132192F16E5B14100DD6753 /* name.ridgewell.ActivityLoader.plist */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2132190B16E5B14100DD6753 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2132190D16E5B14100DD6753 /* ActivityLoader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2132193316E5B14100DD6753 /* Build configuration list for PBXNativeTarget "ActivityLoader" */;
+			buildPhases = (
+				2132190916E5B14100DD6753 /* Sources */,
+				2132190A16E5B14100DD6753 /* Frameworks */,
+				2132190B16E5B14100DD6753 /* Headers */,
+				2132190C16E5B14100DD6753 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActivityLoader;
+			productName = ActivityLoader;
+			productReference = 2132190E16E5B14100DD6753 /* ActivityLoader.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2132190516E5B14100DD6753 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 2132190816E5B14100DD6753 /* Build configuration list for PBXProject "ActivityLoader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2132190416E5B14100DD6753;
+			productRefGroup = 2132190F16E5B14100DD6753 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2132190D16E5B14100DD6753 /* ActivityLoader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2132190C16E5B14100DD6753 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2132190916E5B14100DD6753 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2132192116E5B14100DD6753 /* ActivityLoaderController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2132193116E5B14100DD6753 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		2132193216E5B14100DD6753 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		2132193416E5B14100DD6753 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ActivityLoader/ActivityLoader-Prefix.pch";
+				INFOPLIST_FILE = "ActivityLoader/ActivityLoader-Info.plist";
+				INSTALL_PATH = /Library/PreferenceBundles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		2132193516E5B14100DD6753 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ActivityLoader/ActivityLoader-Prefix.pch";
+				INFOPLIST_FILE = "ActivityLoader/ActivityLoader-Info.plist";
+				INSTALL_PATH = /Library/PreferenceBundles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2132190816E5B14100DD6753 /* Build configuration list for PBXProject "ActivityLoader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2132193116E5B14100DD6753 /* Debug */,
+				2132193216E5B14100DD6753 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2132193316E5B14100DD6753 /* Build configuration list for PBXNativeTarget "ActivityLoader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2132193416E5B14100DD6753 /* Debug */,
+				2132193516E5B14100DD6753 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2132190516E5B14100DD6753 /* Project object */;
+}
