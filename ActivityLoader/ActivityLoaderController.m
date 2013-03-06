@@ -9,172 +9,145 @@
 #import "ActivityLoaderController.h"
 #import <Preferences/PSSpecifier.h>
 
-#define kSetting_Example_Name @"NameOfAnExampleSetting"
-#define kSetting_Example_Value @"ValueOfAnExampleSetting"
-
-#define kSetting_TemplateVersion_Name @"TemplateVersionExample"
-#define kSetting_TemplateVersion_Value @"1.0"
-
-#define kSetting_Text_Name @"TextExample"
-#define kSetting_Text_Value @"Go Red Sox!"
-
-#define kUrl_FollowOnTwitter @"https://twitter.com/kokoabim"
-#define kUrl_VisitWebSite @"http://iosopendev.com"
-#define kUrl_MakeDonation @"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=56KLKJLXKM9FS"
-
+#define kActivity_Path @"/Library/ActivityLoader/"
 #define kPrefs_Path @"/var/mobile/Library/Preferences"
 #define kPrefs_KeyName_Key @"key"
 #define kPrefs_KeyName_Defaults @"defaults"
 
 @implementation ActivityLoaderController
 
-- (id)getValueForSpecifier:(PSSpecifier*)specifier
-{
-	id value = nil;
-	
-	NSDictionary *specifierProperties = [specifier properties];
-	NSString *specifierKey = [specifierProperties objectForKey:kPrefs_KeyName_Key];
-	
-	// get 'value' with code only
-	if ([specifierKey isEqual:kSetting_TemplateVersion_Name])
-	{
-		value = kSetting_TemplateVersion_Value;
-	}
-	else if ([specifierKey isEqual:kSetting_Example_Name])
-	{
-		value = kSetting_Example_Value;
-	}
-	// ...or get 'value' from 'defaults' plist or (optionally as a default value) with code
-	else
-	{
-		// get 'value' from 'defaults' plist (if 'defaults' key and file exists)
-		NSMutableString *plistPath = [[[NSMutableString alloc] initWithString:[specifierProperties objectForKey:kPrefs_KeyName_Defaults]] autorelease];
-		if (plistPath)
-		{
-			NSDictionary *dict = (NSDictionary*)[self initDictionaryWithFile:&plistPath asMutable:NO];
-			
-			id objectValue = [dict objectForKey:specifierKey];
-			
-			if (objectValue)
-			{
-				value = [NSString stringWithFormat:@"%@", objectValue];
-				NSLog(@"read key '%@' with value '%@' from plist '%@'", specifierKey, value, plistPath);
-			}
-			else
-			{
-				NSLog(@"key '%@' not found in plist '%@'", specifierKey, plistPath);
-			}
-			
-			[dict release];
-		}
-		
-		// get default 'value' from code
-		if (!value)
-		{
-			if ([specifierKey isEqual:kSetting_Text_Name])
-			{
-				value = kSetting_Text_Value;
-			}
-			else if ([specifierKey isEqual:kSetting_Example_Name])
-			{
-				value = kSetting_Example_Value;
-			}
-		}
-	}
-	
-	return value;
+- (id)getValueForSpecifier:(PSSpecifier *)specifier {
+    id value = nil;
+    NSDictionary *specifierProperties = [specifier properties];
+    NSString *specifierKey = [specifierProperties objectForKey:kPrefs_KeyName_Key] ? : nil;
+    NSString *plistPath = [specifierProperties objectForKey:kPrefs_KeyName_Defaults] ? : @APP_ID;
+
+    DLog(@"%@", specifierKey);
+    if (specifierKey) {
+        NSDictionary *dict = [self dictionaryWithFile:&plistPath asMutable:NO];
+        id objectValue = [dict objectForKey:specifierKey];
+        if (objectValue) {
+            value = [NSString stringWithFormat:@"%@", objectValue];
+            DLog(@"read key '%@' with value '%@' from plist '%@'", specifierKey, value, plistPath);
+        } else {
+            DLog(@"key '%@' not found in plist '%@'", specifierKey, plistPath);
+        }
+    }
+
+    return value;
 }
 
-- (void)setValue:(id)value forSpecifier:(PSSpecifier*)specifier;
-{
-	NSDictionary *specifierProperties = [specifier properties];
-	NSString *specifierKey = [specifierProperties objectForKey:kPrefs_KeyName_Key];
-	
-	// use 'value' with code only
-	if ([specifierKey isEqual:kSetting_Example_Name])
-	{
-		// do something here with 'value'...
-	}
-	// ...or save 'value' to 'defaults' plist and (optionally) with code
-	else
-	{
-		// save 'value' to 'defaults' plist (if 'defaults' key exists)
-		NSMutableString *plistPath = [[[NSMutableString alloc] initWithString:[specifierProperties objectForKey:kPrefs_KeyName_Defaults]] autorelease];
-		if (plistPath)
-		{
-			NSMutableDictionary *dict = (NSMutableDictionary*)[self initDictionaryWithFile:&plistPath asMutable:YES];
-			[dict setObject:value forKey:specifierKey];
-			[dict writeToFile:plistPath atomically:YES];
-			[dict release];
+- (void)setValue:(id)value forSpecifier:(PSSpecifier *)specifier; {
+    NSDictionary *specifierProperties = [specifier properties];
+    NSString *specifierKey = [specifierProperties objectForKey:kPrefs_KeyName_Key];
+    NSString *plistPath = [specifierProperties objectForKey:kPrefs_KeyName_Defaults] ? : @APP_ID;
 
-			NSLog(@"saved key '%@' with value '%@' to plist '%@'", specifierKey, value, plistPath);
-		}
-		
-		// use 'value' with code
-		if ([specifierKey isEqual:kSetting_Example_Name])
-		{
-			// do something here with 'value'...
-		}
-	}
+    DLog(@"%@", specifierKey);
+    if (specifierKey) {
+        NSMutableDictionary *dict = [self dictionaryWithFile:&plistPath asMutable:YES];
+        [dict setObject:value forKey:specifierKey];
+        [dict writeToFile:plistPath atomically:YES];
+
+        DLog(@"saved key '%@' with value '%@' to plist '%@'", specifierKey, value, plistPath);
+    }
 }
 
-- (id)initDictionaryWithFile:(NSMutableString**)plistPath asMutable:(BOOL)asMutable
-{
-	if ([*plistPath hasPrefix:@"/"])
-		*plistPath = [NSString stringWithFormat:@"%@.plist", *plistPath];
-	else
-		*plistPath = [NSString stringWithFormat:@"%@/%@.plist", kPrefs_Path, *plistPath];
-	
-	Class class;
-	if (asMutable)
-		class = [NSMutableDictionary class];
-	else
-		class = [NSDictionary class];
-	
-	id dict;	
-	if ([[NSFileManager defaultManager] fileExistsAtPath:*plistPath])
-		dict = [[class alloc] initWithContentsOfFile:*plistPath];	
-	else
-		dict = [[class alloc] init];
-	
-	return dict;
+- (id)dictionaryWithFile:(NSString **)plistPath asMutable:(BOOL)asMutable {
+    Class class = (asMutable) ? [NSMutableDictionary class] :[NSDictionary class];
+    id dict;
+
+    if ([*plistPath hasPrefix : @"/"]) {
+        *plistPath = [NSString stringWithFormat:@"%@.plist", *plistPath];
+    } else {
+        *plistPath = [NSString stringWithFormat:@"%@/%@.plist", kPrefs_Path, *plistPath];
+    }
+
+    if ([[NSFileManager defaultManager] fileExistsAtPath:*plistPath]) {
+        dict = [class dictionaryWithContentsOfFile:*plistPath];
+    } else {
+        dict = [class dictionary];
+    }
+
+    return dict;
 }
 
-- (void)followOnTwitter:(PSSpecifier*)specifier
-{
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:kUrl_FollowOnTwitter]];
+- (NSArray *)subpathsOfDirectoryAtPath:(NSString *)directory ofType:(NSArray *)extensions {
+    __block NSArray *ext = extensions;
+    NSArray *subpaths = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:directory error:nil];
+
+    BOOL (^filterPathsWithExtension)(id, NSDictionary *) = ^BOOL (id evaluatedObject, NSDictionary *bindings) {
+        return [ext containsObject:[evaluatedObject pathExtension]];
+    };
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:filterPathsWithExtension];
+
+    subpaths = [subpaths filteredArrayUsingPredicate:predicate];
+    return subpaths;
 }
 
-- (void)visitWebSite:(PSSpecifier*)specifier
-{
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:kUrl_VisitWebSite]];
+- (id)specifiers {
+    if (_specifiers == nil) {
+        _specifiers = [self generateSpecifiersFromDirectory:kActivity_Path];
+    }
+
+    return _specifiers;
 }
 
-- (void)makeDonation:(PSSpecifier *)specifier
-{
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:kUrl_MakeDonation]];
+- (id)generateSpecifiersFromDirectory:(NSString *)directory {
+    id specifiers = [self loadSpecifiersFromPlistName:@"ActivityLoader" target:self];
+    NSArray *extensions = @[@"dylib", @"bundle"];
+    NSArray *subpaths = [self subpathsOfDirectoryAtPath:directory ofType:extensions];
+
+    for (NSString *item in subpaths) {
+        DLog(@"processing %@", item);
+//        NSString *fullPath = [NSString stringWithFormat:@"%@/%@", kActivity_Path, item];
+        __block PSSpecifier *specifier;
+        switch ([extensions indexOfObject:[item pathExtension]]) {
+            case 0:
+                specifier = [PSSpecifier preferenceSpecifierNamed:[[item stringByDeletingPathExtension] pathExtension]
+                                                           target:self
+                                                              set:@selector(setValue:forSpecifier:)
+                                                              get:@selector(getValueForSpecifier:)
+                                                           detail:nil
+                                                             cell:[PSTableCell cellTypeFromString:@"PSSwitchCell"]
+                                                             edit:nil];
+                break;
+            case 1:
+
+                break;
+        }
+
+        BOOL (^checkForSameSpecifier)(id, NSUInteger, BOOL *) = ^BOOL (id obj, NSUInteger idx, BOOL *stop) {
+            NSComparisonResult check = [[obj identifier] compare:[specifier identifier]];
+            return (check == NSOrderedSame);
+        };
+        NSUInteger indexOfSameSpecifier = [specifiers indexOfObjectPassingTest:checkForSameSpecifier];
+        BOOL specifierAlreadyExists = (indexOfSameSpecifier != NSNotFound);
+        if (!specifierAlreadyExists) {
+            [specifiers addObject:specifier];
+        }
+    }
+
+#ifdef DEBUG
+    [specifiers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        DLog(@"%@", obj);
+        DLog(@"Name: %@", [obj name]);
+        DLog(@"Identifier: %@", [obj identifier]);
+        DLog(@"Target: %@", [obj target]);
+        DLog(@"Properties: %@", [obj properties]);
+        DLog(@"Controller: %@", [obj detailControllerClass]);
+        DLog(@"Cell: %d", [obj cellType]);
+        DLog(@"Edit: %@", [obj editPaneClass]);
+    }
+    ];
+#endif /* ifdef DEBUG */
+    return specifiers;
 }
 
-- (id)specifiers
-{
-	if (_specifiers == nil)
-		_specifiers = [[self loadSpecifiersFromPlistName:@"ActivityLoader" target:self] retain];
-	
-	return _specifiers;
-}
+- (id)init {
+    if (self = [super init]) {
+    }
 
-- (id)init
-{
-	if ((self = [super init]))
-	{
-	}
-	
-	return self;
-}
-
-- (void)dealloc
-{
-	[super dealloc];
+    return self;
 }
 
 @end
