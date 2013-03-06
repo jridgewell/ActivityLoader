@@ -1,0 +1,3 @@
+[submodule "iOSOpenDev"]
+	path = iOSOpenDev
+	url = git://github.com/jridgewell/iOSOpenDev.git
