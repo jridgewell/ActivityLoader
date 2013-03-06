@@ -6,3 +6,10 @@
 	#import <Foundation/Foundation.h>
 	#import <UIKit/UIKit.h>
 #endif
+
+#ifdef DEBUG
+#   define DEBUG_IDENTIFIER "ActivityLoader"
+#   define DLog(fmt, ...) NSLog((@"%s: %s [Line %d] " fmt), DEBUG_IDENTIFIER, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#   define DLog(...)
+#endif
