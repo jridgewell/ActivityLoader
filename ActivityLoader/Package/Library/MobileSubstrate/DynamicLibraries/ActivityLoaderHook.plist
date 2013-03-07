@@ -1,1 +1,1 @@
-Filter = {Classes = ("UIActivityViewController");};
+Filter = {Bundles = ("com.apple.UIKit");};

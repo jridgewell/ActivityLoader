@@ -5,23 +5,6 @@
 	<key>title</key>
 	<string>ActivityLoader</string>
 	<key>items</key>
-	<array>
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>key</key>
-			<string>name.ridgewell.InstapaperActivity</string>
-			<key>label</key>
-			<string>InstapaperActivity</string>
-			<key>default</key>
-			<true/>
-			<key>defaults</key>
-			<string>name.ridgewell.ActivityLoader</string>
-			<key>get</key>
-			<string>getValueForSpecifier:</string>
-			<key>set</key>
-			<string>setValue:forSpecifier:</string>
-		</dict>
-	</array>
+	<array/>
 </dict>
 </plist>

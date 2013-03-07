@@ -10,9 +10,9 @@
 #import <UIKit/UIKit.h>
 #import <Preferences/Preferences.h>
 
-#define APP_ID "name.ridgewell.ActivityLoader"
+#define APP_ID @"name.ridgewell.ActivityLoader"
 
-@interface ActivityLoaderController : PSListController
+@interface ALPreferenceController : PSListController
 
 - (id)getValueForSpecifier:(PSSpecifier *)specifier;
 - (void)setValue:(id)value forSpecifier:(PSSpecifier *)specifier;

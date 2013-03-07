@@ -8,15 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		2132191216E5B14100DD6753 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191116E5B14100DD6753 /* Foundation.framework */; };
-		2132192116E5B14100DD6753 /* ActivityLoaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2132192016E5B14100DD6753 /* ActivityLoaderController.m */; };
+		2132192116E5B14100DD6753 /* ALPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2132192016E5B14100DD6753 /* ALPreferenceController.m */; };
 		2132193816E5B1D000DD6753 /* Preferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132193616E5B1C100DD6753 /* Preferences.framework */; };
+		2153EC9B16E83DED004B62CD /* libactivityloader.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A473C916E75761009C4578 /* libactivityloader.dylib */; };
+		2153ECA216E84796004B62CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191116E5B14100DD6753 /* Foundation.framework */; };
+		2153ECB716E84870004B62CD /* ActivityLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2153ECB516E84870004B62CD /* ActivityLoader.h */; };
+		2153ECBB16E8497D004B62CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191316E5B14100DD6753 /* UIKit.framework */; };
+		2153ECBC16E84999004B62CD /* ActivityLoaderHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A473BC16E74060009C4578 /* ActivityLoaderHook.m */; };
+		2153ECBD16E849C7004B62CD /* libactivityloader.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A473C916E75761009C4578 /* libactivityloader.dylib */; };
+		2153ECBE16E849F5004B62CD /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A473C116E74D7C009C4578 /* libsubstrate.dylib */; };
 		21A473CA16E75761009C4578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191116E5B14100DD6753 /* Foundation.framework */; };
-		21A473DC16E757C3009C4578 /* ActivityLoaderHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A473BC16E74060009C4578 /* ActivityLoaderHook.m */; };
-		21A473DD16E757CB009C4578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191316E5B14100DD6753 /* UIKit.framework */; };
-		21A473DE16E757E2009C4578 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A473C116E74D7C009C4578 /* libsubstrate.dylib */; };
+		21ACAE3C16E838FE0043C24C /* ALActivityLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 21ACAE3A16E838FE0043C24C /* ALActivityLoader.h */; };
+		21ACAE3D16E838FE0043C24C /* ALActivityLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21ACAE3B16E838FE0043C24C /* ALActivityLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2153ECB916E84949004B62CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2132190516E5B14100DD6753 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2153ECA016E84796004B62CD;
+			remoteInfo = ActivityLoaderHook;
+		};
 		21A473DF16E7D489009C4578 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2132190516E5B14100DD6753 /* Project object */;
@@ -33,8 +46,8 @@
 		2132191B16E5B14100DD6753 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
 		2132191D16E5B14100DD6753 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
 		2132191E16E5B14100DD6753 /* ActivityLoader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActivityLoader-Info.plist"; sourceTree = "<group>"; };
-		2132191F16E5B14100DD6753 /* ActivityLoaderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityLoaderController.h; sourceTree = "<group>"; };
-		2132192016E5B14100DD6753 /* ActivityLoaderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityLoaderController.m; sourceTree = "<group>"; };
+		2132191F16E5B14100DD6753 /* ALPreferenceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPreferenceController.h; sourceTree = "<group>"; };
+		2132192016E5B14100DD6753 /* ALPreferenceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPreferenceController.m; sourceTree = "<group>"; };
 		2132192516E5B14100DD6753 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ActivityLoader.plist; path = Package/Library/PreferenceLoader/Preferences/ActivityLoader.plist; sourceTree = "<group>"; };
 		2132192816E5B14100DD6753 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ActivityLoader.plist; path = Package/Library/PreferenceBundles/ActivityLoader.bundle/ActivityLoader.plist; sourceTree = "<group>"; };
 		2132192916E5B14100DD6753 /* ActivityLoaderIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ActivityLoaderIcon.png; path = Package/Library/PreferenceBundles/ActivityLoader.bundle/ActivityLoaderIcon.png; sourceTree = "<group>"; };
@@ -42,11 +55,14 @@
 		2132192F16E5B14100DD6753 /* name.ridgewell.ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = name.ridgewell.ActivityLoader.plist; path = Package/var/mobile/Library/Preferences/name.ridgewell.ActivityLoader.plist; sourceTree = "<group>"; };
 		2132193016E5B14100DD6753 /* ActivityLoader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActivityLoader-Prefix.pch"; sourceTree = "<group>"; };
 		2132193616E5B1C100DD6753 /* Preferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Preferences.framework; path = System/Library/PrivateFrameworks/Preferences.framework; sourceTree = SDKROOT; };
-		21A4739516E73865009C4578 /* ActivityLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityLoader.h; sourceTree = "<group>"; };
+		2153ECA116E84796004B62CD /* ActivityLoaderHook.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ActivityLoaderHook.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		2153ECB516E84870004B62CD /* ActivityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLoader.h; sourceTree = "<group>"; };
+		2153ECB816E8489D004B62CD /* ActivityLoaderHook.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ActivityLoaderHook.plist; sourceTree = "<group>"; };
 		21A473BC16E74060009C4578 /* ActivityLoaderHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLoaderHook.m; sourceTree = "<group>"; };
 		21A473C116E74D7C009C4578 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = /opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<absolute>"; };
-		21A473C916E75761009C4578 /* ActivityLoaderHook.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ActivityLoaderHook.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		21ACAA5816E7D5F30043C24C /* ActivityLoaderHook.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ActivityLoaderHook.plist; sourceTree = "<group>"; };
+		21A473C916E75761009C4578 /* libactivityloader.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libactivityloader.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		21ACAE3A16E838FE0043C24C /* ALActivityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALActivityLoader.h; sourceTree = "<group>"; };
+		21ACAE3B16E838FE0043C24C /* ALActivityLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALActivityLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +70,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2153EC9B16E83DED004B62CD /* libactivityloader.dylib in Frameworks */,
 				2132191216E5B14100DD6753 /* Foundation.framework in Frameworks */,
 				2132193816E5B1D000DD6753 /* Preferences.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2153EC9D16E84796004B62CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2153ECBE16E849F5004B62CD /* libsubstrate.dylib in Frameworks */,
+				2153ECBD16E849C7004B62CD /* libactivityloader.dylib in Frameworks */,
+				2153ECBB16E8497D004B62CD /* UIKit.framework in Frameworks */,
+				2153ECA216E84796004B62CD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21A473DE16E757E2009C4578 /* libsubstrate.dylib in Frameworks */,
-				21A473DD16E757CB009C4578 /* UIKit.framework in Frameworks */,
 				21A473CA16E75761009C4578 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,7 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				2132190E16E5B14100DD6753 /* ActivityLoader.bundle */,
-				21A473C916E75761009C4578 /* ActivityLoaderHook.dylib */,
+				21A473C916E75761009C4578 /* libactivityloader.dylib */,
+				2153ECA116E84796004B62CD /* ActivityLoaderHook.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,8 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				21A473BC16E74060009C4578 /* ActivityLoaderHook.m */,
-				2132191F16E5B14100DD6753 /* ActivityLoaderController.h */,
-				2132192016E5B14100DD6753 /* ActivityLoaderController.m */,
+				21ACAE3A16E838FE0043C24C /* ALActivityLoader.h */,
+				21ACAE3B16E838FE0043C24C /* ALActivityLoader.m */,
+				2132191F16E5B14100DD6753 /* ALPreferenceController.h */,
+				2132192016E5B14100DD6753 /* ALPreferenceController.m */,
 				2132191816E5B14100DD6753 /* Package */,
 				2132191C16E5B14100DD6753 /* Supporting Files */,
 			);
@@ -116,8 +145,8 @@
 		2132191816E5B14100DD6753 /* Package */ = {
 			isa = PBXGroup;
 			children = (
-				21A4739016E73815009C4578 /* usr */,
 				2132191916E5B14100DD6753 /* DEBIAN */,
+				21A4739016E73815009C4578 /* usr */,
 				2132192216E5B14100DD6753 /* Library */,
 				2132192B16E5B14100DD6753 /* var */,
 			);
@@ -218,29 +247,29 @@
 			name = Preferences;
 			sourceTree = "<group>";
 		};
+		2153ECB416E84870004B62CD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				2153ECB516E84870004B62CD /* ActivityLoader.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		2153ECB616E84870004B62CD /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		21A4739016E73815009C4578 /* usr */ = {
 			isa = PBXGroup;
 			children = (
-				21A4739116E73815009C4578 /* local */,
+				2153ECB416E84870004B62CD /* include */,
+				2153ECB616E84870004B62CD /* lib */,
 			);
 			name = usr;
 			path = Package/usr;
-			sourceTree = "<group>";
-		};
-		21A4739116E73815009C4578 /* local */ = {
-			isa = PBXGroup;
-			children = (
-				21A4739216E73815009C4578 /* include */,
-			);
-			path = local;
-			sourceTree = "<group>";
-		};
-		21A4739216E73815009C4578 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				21A4739516E73865009C4578 /* ActivityLoader.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		21ACAA5616E7D5F30043C24C /* MobileSubstrate */ = {
@@ -255,7 +284,7 @@
 		21ACAA5716E7D5F30043C24C /* DynamicLibraries */ = {
 			isa = PBXGroup;
 			children = (
-				21ACAA5816E7D5F30043C24C /* ActivityLoaderHook.plist */,
+				2153ECB816E8489D004B62CD /* ActivityLoaderHook.plist */,
 			);
 			path = DynamicLibraries;
 			sourceTree = "<group>";
@@ -270,10 +299,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2153EC9E16E84796004B62CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		21A473C616E75761009C4578 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21ACAE3C16E838FE0043C24C /* ALActivityLoader.h in Headers */,
+				2153ECB716E84870004B62CD /* ActivityLoader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,15 +331,34 @@
 			);
 			dependencies = (
 				21A473E016E7D489009C4578 /* PBXTargetDependency */,
+				2153ECBA16E84949004B62CD /* PBXTargetDependency */,
 			);
 			name = ActivityLoader;
 			productName = ActivityLoader;
 			productReference = 2132190E16E5B14100DD6753 /* ActivityLoader.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		21A473C816E75761009C4578 /* ActivityLoaderHook */ = {
+		2153ECA016E84796004B62CD /* ActivityLoaderHook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21A473D916E75761009C4578 /* Build configuration list for PBXNativeTarget "ActivityLoaderHook" */;
+			buildConfigurationList = 2153ECB116E84796004B62CD /* Build configuration list for PBXNativeTarget "ActivityLoaderHook" */;
+			buildPhases = (
+				2153EC9C16E84796004B62CD /* Sources */,
+				2153EC9D16E84796004B62CD /* Frameworks */,
+				2153EC9E16E84796004B62CD /* Headers */,
+				2153EC9F16E84796004B62CD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActivityLoaderHook;
+			productName = ActivityLoaderHook;
+			productReference = 2153ECA116E84796004B62CD /* ActivityLoaderHook.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		21A473C816E75761009C4578 /* libactivityloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21A473D916E75761009C4578 /* Build configuration list for PBXNativeTarget "libactivityloader" */;
 			buildPhases = (
 				21A473C416E75761009C4578 /* Sources */,
 				21A473C516E75761009C4578 /* Frameworks */,
@@ -312,9 +369,9 @@
 			);
 			dependencies = (
 			);
-			name = ActivityLoaderHook;
+			name = libactivityloader;
 			productName = ActivityLoaderHook;
-			productReference = 21A473C916E75761009C4578 /* ActivityLoaderHook.dylib */;
+			productReference = 21A473C916E75761009C4578 /* libactivityloader.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -338,7 +395,8 @@
 			projectRoot = "";
 			targets = (
 				2132190D16E5B14100DD6753 /* ActivityLoader */,
-				21A473C816E75761009C4578 /* ActivityLoaderHook */,
+				21A473C816E75761009C4578 /* libactivityloader */,
+				2153ECA016E84796004B62CD /* ActivityLoaderHook */,
 			);
 		};
 /* End PBXProject section */
@@ -356,6 +414,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "iOSOpenDev/bin/iosod --xcbp";
+		};
+		2153EC9F16E84796004B62CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export TARGET_NAME=\"ActivityLoader\"\niOSOpenDev/bin/iosod --xcbp-setup";
 		};
 		21ACAA5916E7D7910043C24C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -377,7 +448,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2132192116E5B14100DD6753 /* ActivityLoaderController.m in Sources */,
+				2132192116E5B14100DD6753 /* ALPreferenceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2153EC9C16E84796004B62CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2153ECBC16E84999004B62CD /* ActivityLoaderHook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,16 +464,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21A473DC16E757C3009C4578 /* ActivityLoaderHook.m in Sources */,
+				21ACAE3D16E838FE0043C24C /* ALActivityLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2153ECBA16E84949004B62CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2153ECA016E84796004B62CD /* ActivityLoaderHook */;
+			targetProxy = 2153ECB916E84949004B62CD /* PBXContainerItemProxy */;
+		};
 		21A473E016E7D489009C4578 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 21A473C816E75761009C4578 /* ActivityLoaderHook */;
+			target = 21A473C816E75761009C4578 /* libactivityloader */;
 			targetProxy = 21A473DF16E7D489009C4578 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -476,7 +560,7 @@
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
 				iOSOpenDevDevice = "";
-				iOSOpenDevInstallOnAnyBuild = YES;
+				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = YES;
 				iOSOpenDevUsePackageVersionPList = YES;
@@ -510,7 +594,7 @@
 			};
 			name = Release;
 		};
-		21A473DA16E75761009C4578 /* Debug */ = {
+		2153ECB216E84796004B62CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
@@ -519,13 +603,65 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActivityLoader/ActivityLoader-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = NO;
+				iOSOpenDevPath = iOSOpenDev;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		2153ECB316E84796004B62CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ActivityLoader/ActivityLoader-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = NO;
+				iOSOpenDevPath = iOSOpenDev;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+		21A473DA16E75761009C4578 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ActivityLoader/ActivityLoader-Prefix.pch";
+				INSTALL_PATH = /usr/lib;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
 				iOSOpenDevDevice = "";
-				iOSOpenDevInstallOnAnyBuild = YES;
-				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = NO;
 				iOSOpenDevRespringOnInstall = YES;
 				iOSOpenDevUsePackageVersionPList = YES;
 			};
@@ -539,14 +675,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActivityLoader/ActivityLoader-Prefix.pch";
-				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				INSTALL_PATH = /usr/lib;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
 				iOSOpenDevDevice = "";
 				iOSOpenDevInstallOnAnyBuild = NO;
-				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevInstallOnProfiling = NO;
 				iOSOpenDevRespringOnInstall = YES;
 				iOSOpenDevUsePackageVersionPList = YES;
 			};
@@ -573,7 +709,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21A473D916E75761009C4578 /* Build configuration list for PBXNativeTarget "ActivityLoaderHook" */ = {
+		2153ECB116E84796004B62CD /* Build configuration list for PBXNativeTarget "ActivityLoaderHook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2153ECB216E84796004B62CD /* Debug */,
+				2153ECB316E84796004B62CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		21A473D916E75761009C4578 /* Build configuration list for PBXNativeTarget "libactivityloader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21A473DA16E75761009C4578 /* Debug */,
