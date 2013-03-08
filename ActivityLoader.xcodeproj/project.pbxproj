@@ -52,6 +52,19 @@
 		21ACAE3D16E838FE0043C24C /* ALActivityLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21ACAE3B16E838FE0043C24C /* ALActivityLoader.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		2178A8C716EA6E0000DD8C3B /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = file.xib;
+			isEditable = 1;
+			outputFiles = (
+				"$(",
+			);
+			script = "# ibtool\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXContainerItemProxy section */
 		215A2AED16E9943000666D48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -618,8 +631,10 @@
 				215A2C0D16E9BF9D00666D48 /* Frameworks */,
 				215A2C0E16E9BF9D00666D48 /* Headers */,
 				215A2C0F16E9BF9D00666D48 /* ShellScript */,
+				2178A8DD16EA6E7C00DD8C3B /* ShellScript */,
 			);
 			buildRules = (
+				2178A8C716EA6E0000DD8C3B /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -713,6 +728,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export TARGET_NAME=\"ActivityLoader\"\n/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+		2178A8DD16EA6E7C00DD8C3B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bundleDir=\"$PROJECT_DIR/$PROJECT/Package/Library/ActivityLoader/$PRODUCT_NAME.bundle\"\nrm -r \"$bundleDir\" 2>/dev/null\nmkdir -p \"$bundleDir\"\ncd \"$PROJECT_DIR\"\nxibs=$(find \"$PRODUCT_NAME/$PRODUCT_NAME\" -name \"*.xib\")\nfor file in $xibs; do\n    filename=\"$(basename $file)\"\n    nib=\"${filename%.*}.nib\"\n    ibtool --errors --warnings --output-format human-readable-text --compile \"$bundleDir/$nib\" \"$file\"\ndone\npngs=$(find \"$PRODUCT_NAME/$PRODUCT_NAME\" -name \"*.png\")\nfor file in $pngs; do\n    filename=\"$(basename $file)\"\n    cp \"$file\" \"$bundleDir/$filename\"\ndone";
 		};
 		21ACAA5916E7D7910043C24C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
