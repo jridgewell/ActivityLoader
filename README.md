@@ -7,16 +7,16 @@ A library for adding custom UIActions (iOS 6+ share actions) to all apps. **Requ
 What?
 -----
 
-Implementing this library will allow you to add any UIAction to any app that uses UIActivityViewController. That's all the stock Apple apps, right off the bat!
+Implementing this library will allow you to add any UIActivity to any app that uses UIActivityViewController. That's all the stock Apple apps, right off the bat!
 I've implemented Instapaper as an example (using @marianoabdala's [ZYInstapaperActivity](https://github.com/marianoabdala/ZYInstapaperActivity)).
 
 
 How do I do it?
 ---------------
 
-    1. Download the [lib and .h files](https://dl.dropbox.com/u/2924547/activityloader/activityloader.zip).
-    2. Create a subclass of UIActivity that implements the <ALActivity> protocol.
-    3. Do whatever you want.
+1. Download the [lib and .h files](https://dl.dropbox.com/u/2924547/activityloader/activityloader.zip).
+2. Create a subclass of UIActivity that implements the <ALActivity> protocol.
+3. Do whatever you want.
 
 MyActivity.h
 ```
@@ -107,8 +107,8 @@ MyActivity.m
 TODO
 ----
 
-    1. Create an example project.
-    2. Create:
-        - Theos template
-        - iOSOpenDev template
-    3. More activities!
+1. Create an example project.
+2. Create:
+    - Theos template
+    - iOSOpenDev template
+3. More activities!
