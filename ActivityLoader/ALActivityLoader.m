@@ -42,7 +42,10 @@
         
         [activitiesFromPlist enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
             if ([value boolValue]) {
-                [enabledActivities addObject:[self.activities objectForKey:key]];
+                id activity =[self.activities objectForKey:key];
+                if (activity) {
+                    [enabledActivities addObject:activity];
+                }
             }
         }];
         QLog(enabledActivities);
