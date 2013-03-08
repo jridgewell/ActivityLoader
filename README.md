@@ -2,7 +2,17 @@ ActivityLoader
 ==============
 
 A library for adding custom UIActions (iOS 6+ share actions) to all apps. **Requires** a jailbroken iOS.
+
 ![Instapaper: Read Later using ActivityLoader](https://dl.dropbox.com/u/2924547/activityloader/activityloader.png)
+
+The Quick Way
+-------------
+
+Add the following repo to your Cydia sources:
+    http://jridgewell.github.com/ActivityLoader/
+
+Search for ActivityLoader, and install!
+
 
 What?
 -----
