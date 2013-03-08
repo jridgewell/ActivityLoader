@@ -6,7 +6,7 @@
 //
 //
 
-#define kAL_ID @"name.ridgewell.ActivityLoader"
+#define kAL_ID @"name.ridgewell.activityloader"
 #define kActivities_Path @"/Library/ActivityLoader/"
 #define kPrefs_Path @"/var/mobile/Library/Preferences/"
 #define kPrefs_File kPrefs_Path kAL_ID @".plist"

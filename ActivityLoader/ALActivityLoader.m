@@ -37,7 +37,7 @@
 
 - (NSArray *)enabledActivities {
     if (![self._enabledActivities count]) {
-        NSDictionary *activitiesFromPlist = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/name.ridgewell.ActivityLoader.plist"];
+        NSDictionary *activitiesFromPlist = [NSDictionary dictionaryWithContentsOfFile:kPrefs_File];
         __block NSMutableArray *enabledActivities = [NSMutableArray array];
         
         [activitiesFromPlist enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
