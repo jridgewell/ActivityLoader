@@ -686,7 +686,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "iOSOpenDev/bin/iosod --xcbp";
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
 		};
 		2153EC9F16E84796004B62CD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -699,7 +699,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export TARGET_NAME=\"ActivityLoader\"\niOSOpenDev/bin/iosod --xcbp-setup";
+			shellScript = "export TARGET_NAME=\"ActivityLoader\"\n/opt/iOSOpenDev/bin/iosod --xcbp";
 		};
 		215A2C0F16E9BF9D00666D48 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -712,7 +712,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export TARGET_NAME=\"ActivityLoader\"\niOSOpenDev/bin/iosod --xcbp-setup";
+			shellScript = "export TARGET_NAME=\"ActivityLoader\"\n/opt/iOSOpenDev/bin/iosod --xcbp";
 		};
 		21ACAA5916E7D7910043C24C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -725,7 +725,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export TARGET_NAME=\"ActivityLoader\"\niOSOpenDev/bin/iosod --xcbp-setup";
+			shellScript = "export TARGET_NAME=\"ActivityLoader\"\n/opt/iOSOpenDev/bin/iosod --xcbp";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -824,7 +824,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
 				iOSOpenDevDevice = "";
-				iOSOpenDevPath = iOSOpenDev;
+				iOSOpenDevPath = /opt/iOSOpenDev;
 			};
 			name = Debug;
 		};
@@ -850,7 +850,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				iOSOpenDevDevice = "";
-				iOSOpenDevPath = iOSOpenDev;
+				iOSOpenDevPath = /opt/iOSOpenDev;
 			};
 			name = Release;
 		};
@@ -1071,6 +1071,7 @@
 				215A2C2316E9BF9D00666D48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21A473D916E75761009C4578 /* Build configuration list for PBXNativeTarget "libactivityloader" */ = {
 			isa = XCConfigurationList;
