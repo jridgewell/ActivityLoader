@@ -131,7 +131,7 @@
 		215A2C5016E9C0EF00666D48 /* ZYInstapaperActivityItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYInstapaperActivityItem.m; sourceTree = "<group>"; };
 		215A2C6A16E9C1DF00666D48 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		215A2C7116E9C93800666D48 /* ZYInstapaperActivity.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYInstapaperActivity.bundle; sourceTree = "<group>"; };
-		215A2C7216E9C94E00666D48 /* InstapaperActivity.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = InstapaperActivity.plist; sourceTree = "<group>"; };
+		215A2C7316E9CA3500666D48 /* ZYInstapaperActivity.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ZYInstapaperActivity.plist; sourceTree = "<group>"; };
 		21A473BC16E74060009C4578 /* ActivityLoaderHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLoaderHook.m; sourceTree = "<group>"; };
 		21A473C116E74D7C009C4578 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = /opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<absolute>"; };
 		21A473C916E75761009C4578 /* libactivityloader.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libactivityloader.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,7 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				215A2AF716E99CCB00666D48 /* ActivityLoader.plist */,
-				215A2C7216E9C94E00666D48 /* InstapaperActivity.plist */,
+				215A2C7316E9CA3500666D48 /* ZYInstapaperActivity.plist */,
 			);
 			path = DynamicLibraries;
 			sourceTree = "<group>";
