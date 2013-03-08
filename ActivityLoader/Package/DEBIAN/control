@@ -9,9 +9,9 @@ Replaces:
 Priority: optional
 Architecture: iphoneos-arm
 Author: Justin Ridgewell
-dev: 
-Homepage: 
-Depiction: 
-Maintainer: 
+dev: Justin Ridgewell
+Homepage: http://jridgewell.github.com/ActivityLoader
+Depiction: Add custom UIActivities to any app!
+Maintainer: JRidgewell
 Icon: 
 
