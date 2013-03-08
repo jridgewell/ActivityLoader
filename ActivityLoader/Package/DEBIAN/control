@@ -1,6 +1,6 @@
 Package: name.ridgewell.ActivityLoader
 Name: ActivityLoader
-Version: 0.0-1
+Version: 0.1-0
 Description: 
 Section: PreferenceBundles
 Depends: firmware (>= 5.0), mobilesubstrate, preferenceloader

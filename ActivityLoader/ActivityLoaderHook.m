@@ -6,17 +6,11 @@
 //
 //
 
-#define APP_ID @"name.ridgewell.ActivityLoader"
-#define PREFERENCES_PATH @"/var/mobile/Library/Preferences/"
-#define PREFERENCES_FILE PREFERENCES_PATH APP_ID @".plist"
-#define READING_LIST_ACTIVITY_TYPE @"com.apple.mobilesafari.activity.addToReadingList"
-#define ACTIVITIES_PATH @"/Library/ActivityLoader/"
-
 #define CHAppName "ActivityLoaderHook"
 #define CHUseSubstrate
+
 #import <CaptainHook/CaptainHook.h>
 #import <UIKit/UIActivityViewController.h>
-#import <dlfcn.h>
 #import "ALActivityLoader.h"
 
 
@@ -32,19 +26,20 @@ CHOptimizedMethod(0, self, NSArray *, UIActivityViewController, excludedActivity
 CHOptimizedMethod(2, self, id, UIActivityViewController, initWithActivityItems, NSArray *, activityItems, applicationActivities, NSArray *, applicationActivities) {
     ALActivityLoader *loader = [ALActivityLoader sharedInstance];
     NSMutableArray *activities = [NSMutableArray arrayWithArray:applicationActivities];
+    NSArray *enabledActivities = [loader enabledActivities];
     QLog(loader);
-//    QLog([loader enabledActivities]);
+    QLog(enabledActivities);
     
-	for (id<ALActivity> activity in loader.enabledActivities) {
+	for (id<ALActivity> activity in enabledActivities) {
 //        QLog(activity);
 		[activities addObject:activity];
 	}
     QLog(activities);
-    return nil; //CHSuper(2, UIActivityViewController, initWithActivityItems, activityItems, applicationActivities, activities);
+    return CHSuper(2, UIActivityViewController, initWithActivityItems, activityItems, applicationActivities, activities);
 }
 
 CHConstructor {
-    DLog(@"Loaded CHConstructor");
+    DLog(@"Loaded Hooker");
     CHLoadClass(UIActivityViewController);
     CHHook(0, UIActivityViewController, excludedActivityTypes);
     CHHook(2, UIActivityViewController, initWithActivityItems, applicationActivities);

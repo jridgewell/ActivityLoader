@@ -12,18 +12,19 @@
 		2132193816E5B1D000DD6753 /* Preferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132193616E5B1C100DD6753 /* Preferences.framework */; };
 		2153EC9B16E83DED004B62CD /* libactivityloader.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A473C916E75761009C4578 /* libactivityloader.dylib */; };
 		2153ECA216E84796004B62CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191116E5B14100DD6753 /* Foundation.framework */; };
-		2153ECB716E84870004B62CD /* ActivityLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2153ECB516E84870004B62CD /* ActivityLoader.h */; };
 		2153ECBB16E8497D004B62CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191316E5B14100DD6753 /* UIKit.framework */; };
 		2153ECBC16E84999004B62CD /* ActivityLoaderHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A473BC16E74060009C4578 /* ActivityLoaderHook.m */; };
 		2153ECBD16E849C7004B62CD /* libactivityloader.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A473C916E75761009C4578 /* libactivityloader.dylib */; };
 		2153ECBE16E849F5004B62CD /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A473C116E74D7C009C4578 /* libsubstrate.dylib */; };
+		218D584D16E950D9005865F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191316E5B14100DD6753 /* UIKit.framework */; };
+		218D584E16E950FE005865F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191316E5B14100DD6753 /* UIKit.framework */; };
 		21A473CA16E75761009C4578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191116E5B14100DD6753 /* Foundation.framework */; };
 		21ACAE3C16E838FE0043C24C /* ALActivityLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 21ACAE3A16E838FE0043C24C /* ALActivityLoader.h */; };
 		21ACAE3D16E838FE0043C24C /* ALActivityLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21ACAE3B16E838FE0043C24C /* ALActivityLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2153ECB916E84949004B62CD /* PBXContainerItemProxy */ = {
+		215A2AED16E9943000666D48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2132190516E5B14100DD6753 /* Project object */;
 			proxyType = 1;
@@ -43,21 +44,21 @@
 		2132190E16E5B14100DD6753 /* ActivityLoader.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityLoader.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		2132191116E5B14100DD6753 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2132191316E5B14100DD6753 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2132191B16E5B14100DD6753 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
 		2132191D16E5B14100DD6753 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
 		2132191E16E5B14100DD6753 /* ActivityLoader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActivityLoader-Info.plist"; sourceTree = "<group>"; };
 		2132191F16E5B14100DD6753 /* ALPreferenceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPreferenceController.h; sourceTree = "<group>"; };
 		2132192016E5B14100DD6753 /* ALPreferenceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPreferenceController.m; sourceTree = "<group>"; };
-		2132192516E5B14100DD6753 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ActivityLoader.plist; path = Package/Library/PreferenceLoader/Preferences/ActivityLoader.plist; sourceTree = "<group>"; };
-		2132192816E5B14100DD6753 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ActivityLoader.plist; path = Package/Library/PreferenceBundles/ActivityLoader.bundle/ActivityLoader.plist; sourceTree = "<group>"; };
-		2132192916E5B14100DD6753 /* ActivityLoaderIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ActivityLoaderIcon.png; path = Package/Library/PreferenceBundles/ActivityLoader.bundle/ActivityLoaderIcon.png; sourceTree = "<group>"; };
-		2132192A16E5B14100DD6753 /* ActivityLoaderIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ActivityLoaderIcon@2x.png"; path = "Package/Library/PreferenceBundles/ActivityLoader.bundle/ActivityLoaderIcon@2x.png"; sourceTree = "<group>"; };
-		2132192F16E5B14100DD6753 /* name.ridgewell.ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = name.ridgewell.ActivityLoader.plist; path = Package/var/mobile/Library/Preferences/name.ridgewell.ActivityLoader.plist; sourceTree = "<group>"; };
 		2132193016E5B14100DD6753 /* ActivityLoader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActivityLoader-Prefix.pch"; sourceTree = "<group>"; };
 		2132193616E5B1C100DD6753 /* Preferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Preferences.framework; path = System/Library/PrivateFrameworks/Preferences.framework; sourceTree = SDKROOT; };
 		2153ECA116E84796004B62CD /* ActivityLoaderHook.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ActivityLoaderHook.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		2153ECB516E84870004B62CD /* ActivityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLoader.h; sourceTree = "<group>"; };
-		2153ECB816E8489D004B62CD /* ActivityLoaderHook.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ActivityLoaderHook.plist; sourceTree = "<group>"; };
+		215A2AF116E99CCB00666D48 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
+		215A2AF716E99CCB00666D48 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ActivityLoader.plist; sourceTree = "<group>"; };
+		215A2AFD16E99CCB00666D48 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ActivityLoader.plist; sourceTree = "<group>"; };
+		215A2B0016E99CCB00666D48 /* ActivityLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityLoader.h; sourceTree = "<group>"; };
+		215A2B0216E99CCB00666D48 /* libactivityloader.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libactivityloader.dylib; sourceTree = "<group>"; };
+		215A2B0716E99CCB00666D48 /* name.ridgewell.ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = name.ridgewell.ActivityLoader.plist; sourceTree = "<group>"; };
+		215A2B0A16E9A06100666D48 /* ActivityLoaderIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ActivityLoaderIcon.png; path = ActivityLoader.bundle/ActivityLoaderIcon.png; sourceTree = "<group>"; };
+		215A2B0B16E9A06100666D48 /* ActivityLoaderIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ActivityLoaderIcon@2x.png"; path = "ActivityLoader.bundle/ActivityLoaderIcon@2x.png"; sourceTree = "<group>"; };
 		21A473BC16E74060009C4578 /* ActivityLoaderHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLoaderHook.m; sourceTree = "<group>"; };
 		21A473C116E74D7C009C4578 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = /opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<absolute>"; };
 		21A473C916E75761009C4578 /* libactivityloader.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libactivityloader.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218D584E16E950FE005865F6 /* UIKit.framework in Frameworks */,
 				2153EC9B16E83DED004B62CD /* libactivityloader.dylib in Frameworks */,
 				2132191216E5B14100DD6753 /* Foundation.framework in Frameworks */,
 				2132193816E5B1D000DD6753 /* Preferences.framework in Frameworks */,
@@ -91,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218D584D16E950D9005865F6 /* UIKit.framework in Frameworks */,
 				21A473CA16E75761009C4578 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,29 +139,10 @@
 				21ACAE3B16E838FE0043C24C /* ALActivityLoader.m */,
 				2132191F16E5B14100DD6753 /* ALPreferenceController.h */,
 				2132192016E5B14100DD6753 /* ALPreferenceController.m */,
-				2132191816E5B14100DD6753 /* Package */,
+				215A2AEF16E99CCB00666D48 /* Package */,
 				2132191C16E5B14100DD6753 /* Supporting Files */,
 			);
 			path = ActivityLoader;
-			sourceTree = "<group>";
-		};
-		2132191816E5B14100DD6753 /* Package */ = {
-			isa = PBXGroup;
-			children = (
-				2132191916E5B14100DD6753 /* DEBIAN */,
-				21A4739016E73815009C4578 /* usr */,
-				2132192216E5B14100DD6753 /* Library */,
-				2132192B16E5B14100DD6753 /* var */,
-			);
-			name = Package;
-			sourceTree = "<group>";
-		};
-		2132191916E5B14100DD6753 /* DEBIAN */ = {
-			isa = PBXGroup;
-			children = (
-				2132191B16E5B14100DD6753 /* control */,
-			);
-			name = DEBIAN;
 			sourceTree = "<group>";
 		};
 		2132191C16E5B14100DD6753 /* Supporting Files */ = {
@@ -171,122 +155,147 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2132192216E5B14100DD6753 /* Library */ = {
+		215A2AEF16E99CCB00666D48 /* Package */ = {
 			isa = PBXGroup;
 			children = (
-				21ACAA5616E7D5F30043C24C /* MobileSubstrate */,
-				2132192316E5B14100DD6753 /* PreferenceLoader */,
-				2132192616E5B14100DD6753 /* PreferenceBundles */,
+				215A2AF016E99CCB00666D48 /* DEBIAN */,
+				215A2AF216E99CCB00666D48 /* Library */,
+				215A2AFE16E99CCB00666D48 /* usr */,
+				215A2B0316E99CCB00666D48 /* var */,
 			);
-			name = Library;
+			path = Package;
 			sourceTree = "<group>";
 		};
-		2132192316E5B14100DD6753 /* PreferenceLoader */ = {
+		215A2AF016E99CCB00666D48 /* DEBIAN */ = {
 			isa = PBXGroup;
 			children = (
-				2132192416E5B14100DD6753 /* Preferences */,
+				215A2AF116E99CCB00666D48 /* control */,
 			);
-			name = PreferenceLoader;
+			path = DEBIAN;
 			sourceTree = "<group>";
 		};
-		2132192416E5B14100DD6753 /* Preferences */ = {
+		215A2AF216E99CCB00666D48 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				2132192516E5B14100DD6753 /* ActivityLoader.plist */,
+				215A2B0816E99CE600666D48 /* ActivityLoader */,
+				215A2AF416E99CCB00666D48 /* MobileSubstrate */,
+				215A2AF916E99CCB00666D48 /* PreferenceBundles */,
+				215A2AFB16E99CCB00666D48 /* PreferenceLoader */,
 			);
-			name = Preferences;
+			path = Library;
 			sourceTree = "<group>";
 		};
-		2132192616E5B14100DD6753 /* PreferenceBundles */ = {
+		215A2AF416E99CCB00666D48 /* MobileSubstrate */ = {
 			isa = PBXGroup;
 			children = (
-				2132192716E5B14100DD6753 /* ___PACKAGENAME___.bundle */,
+				215A2AF516E99CCB00666D48 /* DynamicLibraries */,
 			);
-			name = PreferenceBundles;
+			path = MobileSubstrate;
 			sourceTree = "<group>";
 		};
-		2132192716E5B14100DD6753 /* ___PACKAGENAME___.bundle */ = {
+		215A2AF516E99CCB00666D48 /* DynamicLibraries */ = {
 			isa = PBXGroup;
 			children = (
-				2132192816E5B14100DD6753 /* ActivityLoader.plist */,
-				2132192916E5B14100DD6753 /* ActivityLoaderIcon.png */,
-				2132192A16E5B14100DD6753 /* ActivityLoaderIcon@2x.png */,
+				215A2AF716E99CCB00666D48 /* ActivityLoader.plist */,
 			);
-			name = "___PACKAGENAME___.bundle";
+			path = DynamicLibraries;
 			sourceTree = "<group>";
 		};
-		2132192B16E5B14100DD6753 /* var */ = {
+		215A2AF916E99CCB00666D48 /* PreferenceBundles */ = {
 			isa = PBXGroup;
 			children = (
-				2132192C16E5B14100DD6753 /* mobile */,
+				215A2B0916E9A03500666D48 /* ActivityLoader.bundle */,
 			);
-			name = var;
+			path = PreferenceBundles;
 			sourceTree = "<group>";
 		};
-		2132192C16E5B14100DD6753 /* mobile */ = {
+		215A2AFB16E99CCB00666D48 /* PreferenceLoader */ = {
 			isa = PBXGroup;
 			children = (
-				2132192D16E5B14100DD6753 /* Library */,
+				215A2AFC16E99CCB00666D48 /* Preferences */,
 			);
-			name = mobile;
+			path = PreferenceLoader;
 			sourceTree = "<group>";
 		};
-		2132192D16E5B14100DD6753 /* Library */ = {
+		215A2AFC16E99CCB00666D48 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				2132192E16E5B14100DD6753 /* Preferences */,
+				215A2AFD16E99CCB00666D48 /* ActivityLoader.plist */,
 			);
-			name = Library;
+			path = Preferences;
 			sourceTree = "<group>";
 		};
-		2132192E16E5B14100DD6753 /* Preferences */ = {
+		215A2AFE16E99CCB00666D48 /* usr */ = {
 			isa = PBXGroup;
 			children = (
-				2132192F16E5B14100DD6753 /* name.ridgewell.ActivityLoader.plist */,
+				215A2AFF16E99CCB00666D48 /* include */,
+				215A2B0116E99CCB00666D48 /* lib */,
 			);
-			name = Preferences;
+			path = usr;
 			sourceTree = "<group>";
 		};
-		2153ECB416E84870004B62CD /* include */ = {
+		215A2AFF16E99CCB00666D48 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				2153ECB516E84870004B62CD /* ActivityLoader.h */,
+				215A2B0016E99CCB00666D48 /* ActivityLoader.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
 		};
-		2153ECB616E84870004B62CD /* lib */ = {
+		215A2B0116E99CCB00666D48 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				215A2B0216E99CCB00666D48 /* libactivityloader.dylib */,
 			);
 			path = lib;
 			sourceTree = "<group>";
 		};
-		21A4739016E73815009C4578 /* usr */ = {
+		215A2B0316E99CCB00666D48 /* var */ = {
 			isa = PBXGroup;
 			children = (
-				2153ECB416E84870004B62CD /* include */,
-				2153ECB616E84870004B62CD /* lib */,
+				215A2B0416E99CCB00666D48 /* mobile */,
 			);
-			name = usr;
-			path = Package/usr;
+			path = var;
 			sourceTree = "<group>";
 		};
-		21ACAA5616E7D5F30043C24C /* MobileSubstrate */ = {
+		215A2B0416E99CCB00666D48 /* mobile */ = {
 			isa = PBXGroup;
 			children = (
-				21ACAA5716E7D5F30043C24C /* DynamicLibraries */,
+				215A2B0516E99CCB00666D48 /* Library */,
 			);
-			name = MobileSubstrate;
-			path = Package/Library/MobileSubstrate;
+			path = mobile;
 			sourceTree = "<group>";
 		};
-		21ACAA5716E7D5F30043C24C /* DynamicLibraries */ = {
+		215A2B0516E99CCB00666D48 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				2153ECB816E8489D004B62CD /* ActivityLoaderHook.plist */,
+				215A2B0616E99CCB00666D48 /* Preferences */,
 			);
-			path = DynamicLibraries;
+			path = Library;
+			sourceTree = "<group>";
+		};
+		215A2B0616E99CCB00666D48 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				215A2B0716E99CCB00666D48 /* name.ridgewell.ActivityLoader.plist */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		215A2B0816E99CE600666D48 /* ActivityLoader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ActivityLoader;
+			sourceTree = "<group>";
+		};
+		215A2B0916E9A03500666D48 /* ActivityLoader.bundle */ = {
+			isa = PBXGroup;
+			children = (
+				215A2B0A16E9A06100666D48 /* ActivityLoaderIcon.png */,
+				215A2B0B16E9A06100666D48 /* ActivityLoaderIcon@2x.png */,
+			);
+			name = ActivityLoader.bundle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				21ACAE3C16E838FE0043C24C /* ALActivityLoader.h in Headers */,
-				2153ECB716E84870004B62CD /* ActivityLoader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +339,7 @@
 			);
 			dependencies = (
 				21A473E016E7D489009C4578 /* PBXTargetDependency */,
-				2153ECBA16E84949004B62CD /* PBXTargetDependency */,
+				215A2AEE16E9943000666D48 /* PBXTargetDependency */,
 			);
 			name = ActivityLoader;
 			productName = ActivityLoader;
@@ -471,10 +479,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2153ECBA16E84949004B62CD /* PBXTargetDependency */ = {
+		215A2AEE16E9943000666D48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2153ECA016E84796004B62CD /* ActivityLoaderHook */;
-			targetProxy = 2153ECB916E84949004B62CD /* PBXContainerItemProxy */;
+			targetProxy = 215A2AED16E9943000666D48 /* PBXContainerItemProxy */;
 		};
 		21A473E016E7D489009C4578 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -509,6 +517,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
@@ -533,6 +542,7 @@
 				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -716,6 +726,7 @@
 				2153ECB316E84796004B62CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21A473D916E75761009C4578 /* Build configuration list for PBXNativeTarget "libactivityloader" */ = {
 			isa = XCConfigurationList;

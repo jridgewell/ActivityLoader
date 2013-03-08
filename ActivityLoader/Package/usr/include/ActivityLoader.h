@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @class ALActivityLoader;
-extern ALActivityLoader *loader;
 
 @protocol ALActivity <NSObject>
 
@@ -21,6 +20,6 @@ extern ALActivityLoader *loader;
 @interface ALActivityLoader : NSObject
 
 + (instancetype)sharedInstance;
-- (void)registerActivity:(id<ALActivity>)activity forName:(NSString *)name;
+- (void)registerActivity:(id<ALActivity>)activity identifier:(NSString *)identifier title:(NSString *)title;
 
 @end

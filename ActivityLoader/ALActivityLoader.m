@@ -7,27 +7,6 @@
 //
 
 #import "ALActivityLoader.h"
-#import <dlfcn.h>
-
-//ALActivityLoader *loader;// = [ALActivityLoader sharedInstance];
-
-static void SettingsChanged() {
-    DLog(@"SETTINGS CHANGED");
-    ALActivityLoader *loader = [ALActivityLoader sharedInstance];
-    QLog(loader);
-    NSDictionary *activitiesFromPlist = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/name.ridgewell.ActivityLoader.plist"];
-    __block NSMutableArray *enabledActivities = [NSMutableArray array];
-    
-    [activitiesFromPlist enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
-        if ([value boolValue]) {
-            [enabledActivities addObject:[loader.activities objectForKey:key]];
-        }
-    }];
-    QLog(enabledActivities);
-    
-//    loader.enabledActivities = enabledActivities;
-}
-
 
 @implementation ALActivityLoader
 
@@ -41,54 +20,36 @@ static void SettingsChanged() {
     return instance;
 }
 
-//- (NSMutableArray *)enabledActivities {
-//    __block NSMutableArray *activities = [NSMutableArray array];
-//
-//    NSDictionary *activitiesFromPlist = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/name.ridgewell.ActivityLoader.plist"];
-//    
-//    [activitiesFromPlist enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
-//        if ([value boolValue]) {
-//            NSString *path = [NSString stringWithFormat:@"/Library/ActivityLoader/%@.dylib", key];
-//            QLog(path);
-//            void *handle = dlopen("/Library/ActivityLoader/%@.dylib", RTLD_LOCAL|RTLD_NOW);
-//            QLog(handle);
-//            if (handle) {
-//                void (*load)() = dlsym(handle, "load");
-//                if (load) {
-//                    QLog(@"LOAD");
-//                    load();
-//                } else {
-//                    QLog(@"NOLOAD!");
-//                }
-//            } else {
-//                QLog(@"NOHANDLE!");
-//            }
-////            NSBundle *bundle = [NSBundle bundleWithPath:path];
-////            QLog(bundle);
-////            if (bundle) {
-////                Class class = [bundle principalClass];
-////                QLog(class);
-////                if (class) {
-////                    [activities addObject:[[class alloc] init]];
-////                }
-////            }
-//        }
-//    }];
-//    QLog(activities);
-//    return activities;
-//}
-
 - (instancetype)init {
     if (self = [super init]) {
 		self.activities = [NSMutableDictionary dictionary];
+		self.activityTitles = [NSMutableDictionary dictionary];
 		self.enabledActivities = [NSMutableArray array];
-        CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, &SettingsChanged, CFSTR("name.ridgewell.ActivityLoader.settingsChanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
     }
     return self;
 }
 
-- (void)registerActivity:(id<ALActivity>)activity forName:(NSString *)name {
-    [self.activities setObject:activity forKey:name];
+- (void)registerActivity:(id<ALActivity>)activity identifier:(NSString *)identifier title:(NSString *)title {
+    DLog(@"Activity: %@, ID: %@, title: %@", activity, identifier, title);
+    [self.activities setObject:activity forKey:identifier];
+    [self.activityTitles setObject:title forKey:identifier];
+}
+
+- (NSArray *)enabledActivities {
+    if (![self._enabledActivities count]) {
+        NSDictionary *activitiesFromPlist = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/name.ridgewell.ActivityLoader.plist"];
+        __block NSMutableArray *enabledActivities = [NSMutableArray array];
+        
+        [activitiesFromPlist enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+            if ([value boolValue]) {
+                [enabledActivities addObject:[self.activities objectForKey:key]];
+            }
+        }];
+        QLog(enabledActivities);
+        self._enabledActivities = enabledActivities;
+    }
+    
+    return self._enabledActivities;
 }
 
 @end

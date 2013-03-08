@@ -6,11 +6,10 @@
 //  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import <Preferences/Preferences.h>
+#import <Preferences/PSListController.h>
+#import "ALActivityLoader.h"
 
-#define APP_ID @"name.ridgewell.ActivityLoader"
+@class PSListController;
 
 @interface ALPreferenceController : PSListController
 
