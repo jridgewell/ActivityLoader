@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Activityloader by jridgewell</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Activityloader</h1>
+        <p>A library for adding custom UIActions (iOS 6+ share actions) to all apps.</p>
+
+        <p class="view"><a href="https://github.com/jridgewell/ActivityLoader">View the Project on GitHub <small>jridgewell/ActivityLoader</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/jridgewell/ActivityLoader/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jridgewell/ActivityLoader/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jridgewell/ActivityLoader">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>A library for adding custom UIActions (iOS 6+ share actions) to all apps. <strong>Requires</strong> a jailbroken iOS.
+<img src="https://dl.dropbox.com/u/2924547/activityloader/activityloader.png" alt="Instapaper: Read Later using ActivityLoader"></p>
+
+<h2>What?</h2>
+
+<p>Implementing this library will allow you to add any UIActivity to any app that uses UIActivityViewController. That's all the stock Apple apps, right off the bat!
+I've implemented Instapaper as an example (using <a href="https://github.com/marianoabdala" class="user-mention">@marianoabdala</a>'s <a href="https://github.com/marianoabdala/ZYInstapaperActivity">ZYInstapaperActivity</a>).</p>
+
+<h2>How do I do it?</h2>
+
+<ol>
+<li>Download the <a href="https://dl.dropbox.com/u/2924547/activityloader/activityloader.zip">lib and .h files</a>.</li>
+<li>Create a subclass of UIActivity that implements the  protocol.</li>
+<li>Do whatever you want.</li>
+</ol><p>MyActivity.h</p>
+
+<div class="highlight"><pre><span class="cp">#import &lt;UIKit/UIKit.h&gt;</span>
+<span class="cp">#import &lt;ActivityLoader/ActivityLoader.h&gt;</span>
+
+<span class="k">@interface</span> <span class="nc">MyActivity</span> : <span class="nc">UIActivity</span> <span class="o">&lt;</span><span class="n">ALActivity</span><span class="o">&gt;</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="n">strong</span><span class="p">,</span> <span class="n">atomic</span><span class="p">)</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">activityItems</span><span class="p">;</span>
+
+<span class="c1">// Required by &lt;ALActivity&gt;</span>
+<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">instance</span><span class="p">;</span>
+<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">load</span><span class="p">;</span>
+
+
+<span class="c1">// Required by UIActivity</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">activityType</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">activityTitle</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nf">activityImage</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">canPerformWithActivityItems:</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">activityItems</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">prepareWithActivityItems:</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">activityItems</span><span class="p">;</span>
+<span class="c1">// Implement ONE AND ONLY ONE of the following.</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nf">activityViewController</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">performActivity</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>MyActivity.m</p>
+
+<div class="highlight"><pre><span class="cp">#import "MyActivity.h"</span>
+
+<span class="k">@implementation</span> <span class="nc">MyActivity</span>
+
+<span class="cp">#pragma mark - MyActivity &lt;ALActivity&gt;</span>
+
+<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">instance</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="kt">dispatch_once_t</span> <span class="n">pred</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">__strong</span> <span class="k">static</span> <span class="kt">id</span> <span class="n">_instance</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+
+    <span class="n">dispatch_once</span><span class="p">(</span><span class="o">&amp;</span><span class="n">pred</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
+        <span class="n">_instance</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="n">alloc</span><span class="p">];</span>
+        <span class="n">_instance</span> <span class="o">=</span> <span class="p">[</span><span class="n">_instance</span> <span class="n">init</span><span class="p">];</span>
+    <span class="p">});</span>
+
+    <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">load</span> <span class="p">{</span>
+    <span class="p">[[</span><span class="n">ALActivityLoader</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="n">registerActivity</span><span class="o">:</span><span class="p">[</span><span class="n">MyActivity</span> <span class="n">instance</span><span class="p">]</span>
+                                             <span class="nl">identifier:</span><span class="p">[</span><span class="n">self</span> <span class="n">activityType</span><span class="p">]</span>
+                                                  <span class="nl">title:</span><span class="p">[</span><span class="n">self</span> <span class="n">activityTitle</span><span class="p">]];</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark - MyActivity : UIActivity</span>
+
+
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">activityTitle</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">NSLocalizedString</span><span class="p">(</span><span class="s">@"My Super Cool Share Activity"</span><span class="p">,</span> <span class="s">@""</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">activityType</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">@"com.example.myactivity"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nf">activityImage</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">UIImage</span> <span class="n">imageNamed</span><span class="o">:</span><span class="s">@"icon"</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">canPerformWithActivityItems:</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">activityItems</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">prepareWithActivityItems:</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">activityItems</span> <span class="p">{</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">activityItems</span> <span class="o">=</span> <span class="n">activityItems</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">performActivity</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">id</span> <span class="n">activityItem</span> <span class="k">in</span> <span class="n">self</span><span class="p">.</span><span class="n">activityItems</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">activityItem</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<h2>TODO</h2>
+
+<ol>
+<li>Create an example project.</li>
+<li>Create:
+
+<ul>
+<li>Theos template</li>
+<li>iOSOpenDev template</li>
+</ul>
+</li>
+<li>More activities!</li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/jridgewell">jridgewell</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
