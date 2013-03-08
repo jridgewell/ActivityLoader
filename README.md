@@ -19,7 +19,7 @@ How do I do it?
 3. Do whatever you want.
 
 MyActivity.h
-```
+```objective-c
 #import <UIKit/UIKit.h>
 #import <ActivityLoader/ActivityLoader.h>
 
@@ -46,7 +46,7 @@ MyActivity.h
 ```
 
 MyActivity.m
-```
+```objective-c
 #import "MyActivity.h"
 
 @implementation MyActivity
