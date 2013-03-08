@@ -6,4 +6,5 @@ Codename: ios
 Architectures: iphoneos-arm
 Components: main
 Description: Repository for ActivityLoader
+Icon: http://jridgewell.github.com/ActivityLoader/icon.png
 
