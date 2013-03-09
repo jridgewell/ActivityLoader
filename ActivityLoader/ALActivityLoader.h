@@ -11,16 +11,13 @@
 #define kPrefs_Path @"/var/mobile/Library/Preferences/"
 #define kPrefs_File kPrefs_Path kAL_ID @".plist"
 
-@protocol ALActivity;
-@class ALActivityLoader;
+#import "ActivityLoader.h"
 
-@interface ALActivityLoader : NSObject
+@interface ALActivityLoader ()
 
 @property (strong, atomic) NSMutableDictionary *activities;
 @property (strong, atomic) NSMutableDictionary *activityTitles;
 @property (strong, atomic, getter = getEnabledActivities, setter = setEnabledActivities:) NSArray *_enabledActivities;
-+ (instancetype)sharedInstance;
-- (void)registerActivity:(id<ALActivity>)activity identifier:(NSString *)identifier title:(NSString *)title;
 - (NSArray *)enabledActivities;
 
 @end
