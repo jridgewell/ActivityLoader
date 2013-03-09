@@ -25,7 +25,6 @@
     if (self = [super init]) {
 		self.activities = [NSMutableDictionary dictionary];
 		self.activityTitles = [NSMutableDictionary dictionary];
-		self.enabledActivities = [NSMutableArray array];
     }
     return self;
 }
@@ -37,7 +36,7 @@
 }
 
 - (NSArray *)enabledActivities {
-    if (![self.enabledActivities count]) {
+    if (self.enabledActivities) {
         __block NSMutableArray *enabledActivities = [NSMutableArray array];
         
         NSDictionary *activitiesFromPlist = [self activitiesPlist];
