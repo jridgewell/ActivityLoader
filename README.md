@@ -101,8 +101,8 @@ MyActivity.m
     return YES;
 }
 
-- (void)prepareWithActivityItems:(NSArray *)activityItems {
-    self.activityItems = activityItems;
+- (void)prepareWithActivityItems:(NSArray *)items {
+    self.activityItems = items;
 }
 
 - (void)performActivity {
