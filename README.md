@@ -39,7 +39,7 @@ MyActivity.h
 
 // Required by <ALActivity>
 + (instancetype)instance;
-+ (instancetype)load;
++ (void)load;
 
 
 // Required by UIActivity
