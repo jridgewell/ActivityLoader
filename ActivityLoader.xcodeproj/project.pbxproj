@@ -10,6 +10,7 @@
 		2132191216E5B14100DD6753 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191116E5B14100DD6753 /* Foundation.framework */; };
 		2132192116E5B14100DD6753 /* ALPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2132192016E5B14100DD6753 /* ALPreferenceController.m */; };
 		2132193816E5B1D000DD6753 /* Preferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132193616E5B1C100DD6753 /* Preferences.framework */; };
+		21337D0B16EBC8C0006AF868 /* ActivityLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 21337D0A16EBC8C0006AF868 /* ActivityLoader.h */; };
 		2153EC9B16E83DED004B62CD /* libactivityloader.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A473C916E75761009C4578 /* libactivityloader.dylib */; };
 		2153ECA216E84796004B62CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191116E5B14100DD6753 /* Foundation.framework */; };
 		2153ECBB16E8497D004B62CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2132191316E5B14100DD6753 /* UIKit.framework */; };
@@ -99,11 +100,11 @@
 		2132192016E5B14100DD6753 /* ALPreferenceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPreferenceController.m; sourceTree = "<group>"; };
 		2132193016E5B14100DD6753 /* ActivityLoader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActivityLoader-Prefix.pch"; sourceTree = "<group>"; };
 		2132193616E5B1C100DD6753 /* Preferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Preferences.framework; path = System/Library/PrivateFrameworks/Preferences.framework; sourceTree = SDKROOT; };
+		21337D0A16EBC8C0006AF868 /* ActivityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLoader.h; sourceTree = "<group>"; };
 		2153ECA116E84796004B62CD /* ActivityLoaderHook.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ActivityLoaderHook.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		215A2AF116E99CCB00666D48 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
 		215A2AF716E99CCB00666D48 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ActivityLoader.plist; sourceTree = "<group>"; };
 		215A2AFD16E99CCB00666D48 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ActivityLoader.plist; sourceTree = "<group>"; };
-		215A2B0016E99CCB00666D48 /* ActivityLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityLoader.h; sourceTree = "<group>"; };
 		215A2B0216E99CCB00666D48 /* libactivityloader.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libactivityloader.dylib; sourceTree = "<group>"; };
 		215A2B0716E99CCB00666D48 /* name.ridgewell.ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = name.ridgewell.ActivityLoader.plist; sourceTree = "<group>"; };
 		215A2B0A16E9A06100666D48 /* ActivityLoaderIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ActivityLoaderIcon.png; path = ActivityLoader.bundle/ActivityLoaderIcon.png; sourceTree = "<group>"; };
@@ -255,6 +256,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		21337D0916EBC8C0006AF868 /* ActivityLoader */ = {
+			isa = PBXGroup;
+			children = (
+				21337D0A16EBC8C0006AF868 /* ActivityLoader.h */,
+			);
+			path = ActivityLoader;
+			sourceTree = "<group>";
+		};
 		215A2AEF16E99CCB00666D48 /* Package */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,7 +347,7 @@
 		215A2AFF16E99CCB00666D48 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				215A2B0016E99CCB00666D48 /* ActivityLoader.h */,
+				21337D0916EBC8C0006AF868 /* ActivityLoader */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -543,6 +552,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21337D0B16EBC8C0006AF868 /* ActivityLoader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
