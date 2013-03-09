@@ -9,6 +9,7 @@
 #import "ALActivityLoader.h"
 
 @implementation ALActivityLoader
+@dynamic enabledActivities;
 
 + (instancetype)sharedInstance {
     static dispatch_once_t pred = 0;
@@ -36,7 +37,7 @@
 }
 
 - (NSArray *)enabledActivities {
-    if (![self._enabledActivities count]) {
+    if (![self.enabledActivities count]) {
         NSDictionary *activitiesFromPlist = [NSDictionary dictionaryWithContentsOfFile:kPrefs_File];
         __block NSMutableArray *enabledActivities = [NSMutableArray array];
         
@@ -49,10 +50,10 @@
             }
         }];
         QLog(enabledActivities);
-        self._enabledActivities = enabledActivities;
+        self.enabledActivities = enabledActivities;
     }
     
-    return self._enabledActivities;
+    return self.enabledActivities;
 }
 
 @end

@@ -17,7 +17,7 @@
 
 @property (strong, atomic) NSMutableDictionary *activities;
 @property (strong, atomic) NSMutableDictionary *activityTitles;
-@property (strong, atomic, getter = getEnabledActivities, setter = setEnabledActivities:) NSArray *_enabledActivities;
+@property (strong, atomic, setter = setEnabledActivities:) NSArray *enabledActivities;
 - (NSArray *)enabledActivities;
 
 @end
