@@ -42,7 +42,7 @@
         NSDictionary *activitiesFromPlist = [self activitiesPlist];
         [activitiesFromPlist enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
             if ([value boolValue]) {
-                id activity =[self.activities objectForKey:key];
+                id activity = [self.activities objectForKey:key];
                 if (activity) {
                     [enabledActivities addObject:activity];
                 }
