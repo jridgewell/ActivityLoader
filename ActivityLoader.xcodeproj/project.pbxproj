@@ -103,7 +103,7 @@
 		21337D0A16EBC8C0006AF868 /* ActivityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLoader.h; sourceTree = "<group>"; };
 		2153ECA116E84796004B62CD /* ActivityLoaderHook.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ActivityLoaderHook.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		215A2AF116E99CCB00666D48 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
-		215A2AF716E99CCB00666D48 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ActivityLoader.plist; sourceTree = "<group>"; };
+		215A2AF716E99CCB00666D48 /* ActivityLoaderHook.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ActivityLoaderHook.plist; sourceTree = "<group>"; };
 		215A2AFD16E99CCB00666D48 /* ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ActivityLoader.plist; sourceTree = "<group>"; };
 		215A2B0216E99CCB00666D48 /* libactivityloader.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libactivityloader.dylib; sourceTree = "<group>"; };
 		215A2B0716E99CCB00666D48 /* name.ridgewell.ActivityLoader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = name.ridgewell.ActivityLoader.plist; sourceTree = "<group>"; };
@@ -305,7 +305,7 @@
 		215A2AF516E99CCB00666D48 /* DynamicLibraries */ = {
 			isa = PBXGroup;
 			children = (
-				215A2AF716E99CCB00666D48 /* ActivityLoader.plist */,
+				215A2AF716E99CCB00666D48 /* ActivityLoaderHook.plist */,
 				215A2C7316E9CA3500666D48 /* ZYInstapaperActivity.plist */,
 			);
 			path = DynamicLibraries;
