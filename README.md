@@ -9,7 +9,7 @@ The Quick Way
 -------------
 
 Add the following repo to your Cydia sources:
-    http://jridgewell.github.com/ActivityLoader/
+    http://jridgewell.github.com/ActivityLoader/cydia/
 
 Search for ActivityLoader, and install!
 
