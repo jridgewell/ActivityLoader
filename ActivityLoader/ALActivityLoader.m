@@ -35,7 +35,7 @@
 }
 
 - (NSArray *)enabledActivities {
-    if (self.enabledActivities) {
+    if (![self.enabledActivities count]) {
         __block NSMutableArray *enabledActivities = [NSMutableArray array];
         
         NSDictionary *activitiesFromPlist = [self activitiesPlist];
@@ -56,7 +56,7 @@
 
 - (NSDictionary *)activitiesPlist {
     // TODO: Implement method to reread plist on app exit
-    if (!self.activitiesPlist) {
+    if (![self.activitiesPlist count]) {
         self.activitiesPlist = [NSDictionary dictionaryWithContentsOfFile:kPrefs_File];
     }
     return self.activitiesPlist;
