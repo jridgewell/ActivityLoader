@@ -118,8 +118,8 @@ MyActivity.m
 TODO
 ----
 
-1. Create an example project.
+1. ~~Create an example project.~~
 2. Create:
-    - Theos template
+    - ~~Theos template~~
     - iOSOpenDev template
 3. More activities!
