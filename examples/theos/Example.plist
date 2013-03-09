@@ -1,0 +1,11 @@
+{
+    Filter = {
+        Mode = "Any";
+        Classes = (
+            "UIActivityViewController"
+        );
+        Bundles = (
+            "com.apple.Preferences"
+        );
+    };
+}

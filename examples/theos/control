@@ -1,0 +1,9 @@
+Package: name.ridgewell.example
+Name: Example
+Depends: mobilesubstrate, name.ridgewell.activityloader
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome ActivityLoader Activity
+Maintainer: Justin Ridgewell
+Author: Justin Ridgewell
+Section: Addons (ActivityLoader)
