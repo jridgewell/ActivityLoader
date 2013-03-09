@@ -9,7 +9,6 @@
 #import "ALActivityLoader.h"
 
 @implementation ALActivityLoader
-@dynamic enabledActivities, activitiesPlist;
 
 + (instancetype)sharedInstance {
     static dispatch_once_t pred = 0;
