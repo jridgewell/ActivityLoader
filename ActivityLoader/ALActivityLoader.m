@@ -9,7 +9,6 @@
 #import "ALActivityLoader.h"
 
 @implementation ALActivityLoader
-@dynamic enabledActivities;
 @dynamic enabledActivities, activitiesPlist;
 
 + (instancetype)sharedInstance {
