@@ -67,7 +67,7 @@ I've implemented Instapaper as an example (using <a href="https://github.com/mar
 <span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">canPerformWithActivityItems:</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">activityItems</span><span class="p">;</span>
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">prepareWithActivityItems:</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">activityItems</span><span class="p">;</span>
 <span class="c1">// Implement ONE AND ONLY ONE of the following.</span>
-<span class="k">-</span> <span class="p">(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nf">activityViewController</span><span class="p">;</span>
+<span class="c1">// - (UIViewController *)activityViewController;</span>
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">performActivity</span><span class="p">;</span>
 
 <span class="k">@end</span>
@@ -94,9 +94,10 @@ I've implemented Instapaper as an example (using <a href="https://github.com/mar
 <span class="p">}</span>
 
 <span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">load</span> <span class="p">{</span>
-    <span class="p">[[</span><span class="n">ALActivityLoader</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="n">registerActivity</span><span class="o">:</span><span class="p">[</span><span class="n">MyActivity</span> <span class="n">instance</span><span class="p">]</span>
-                                             <span class="nl">identifier:</span><span class="p">[</span><span class="n">self</span> <span class="n">activityType</span><span class="p">]</span>
-                                                  <span class="nl">title:</span><span class="p">[</span><span class="n">self</span> <span class="n">activityTitle</span><span class="p">]];</span>
+    <span class="kt">id</span> <span class="n">instance</span> <span class="o">=</span> <span class="p">[</span><span class="n">MyActivity</span> <span class="n">instance</span><span class="p">];</span>
+    <span class="p">[[</span><span class="n">ALActivityLoader</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="n">registerActivity</span><span class="o">:</span><span class="n">instance</span>
+                                             <span class="nl">identifier:</span><span class="p">[</span><span class="n">instance</span> <span class="n">activityType</span><span class="p">]</span>
+                                                  <span class="nl">title:</span><span class="p">[</span><span class="n">instance</span> <span class="n">activityTitle</span><span class="p">]];</span>
 <span class="p">}</span>
 
 <span class="cp">#pragma mark - MyActivity : UIActivity</span>
@@ -118,8 +119,8 @@ I've implemented Instapaper as an example (using <a href="https://github.com/mar
     <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">prepareWithActivityItems:</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">activityItems</span> <span class="p">{</span>
-    <span class="n">self</span><span class="p">.</span><span class="n">activityItems</span> <span class="o">=</span> <span class="n">activityItems</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">prepareWithActivityItems:</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">items</span> <span class="p">{</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">activityItems</span> <span class="o">=</span> <span class="n">items</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">performActivity</span> <span class="p">{</span>
