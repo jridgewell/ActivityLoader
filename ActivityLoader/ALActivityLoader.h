@@ -13,13 +13,18 @@
 
 #import "ActivityLoader.h"
 
+@class UIActivity;
 @interface ALActivityLoader ()
 
 @property (strong, atomic) NSMutableDictionary *activities;
 @property (strong, atomic) NSMutableDictionary *activityTitles;
-@property (strong, atomic, getter = getEnabledActivities, setter = setEnabledActivities:) NSArray *enabledActivities;
-@property (strong, atomic, getter = getActivitiesPlist, setter = setActivitiesPlist:) NSDictionary *activitiesPlist;
+@property (strong, atomic) NSMutableDictionary *replacedActivities;
+@property (strong, atomic, getter = getEnabledActivities) NSArray *enabledActivities;
+@property (strong, atomic, getter = getEnabledActivityIdentifiers) NSArray *enabledActivityIdentifiers;
+@property (strong, atomic, getter = getActivitiesPlist) NSDictionary *activitiesPlist;
 - (NSArray *)enabledActivities;
+- (NSArray *)enabledActivityIdentifiers;
 - (NSDictionary *)activitiesPlist;
+- (BOOL)activityIsReplaced:(UIActivity *)activity;
 
 @end

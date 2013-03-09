@@ -30,6 +30,11 @@ CHOptimizedMethod(2, self, id, UIActivityViewController, initWithActivityItems, 
     NSMutableArray *activities = [NSMutableArray arrayWithArray:applicationActivities];
     DLog(@"Got these activities: %@", activities);
     
+    for (id activity in [activities reverseObjectEnumerator]) {
+        if ([loader activityIsReplaced:activity]) {
+            [activities removeObject:activity];
+        }
+    }
 	for (id<ALActivity> activity in enabledActivities) {
 		[activities addObject:activity];
 	}

@@ -23,5 +23,11 @@
     // @param activity   A reference to your Activity's Class
     // @param identifier A unique string used to identify your Activity
     // @param title      A localized string the user sees in the Settings.app
+- (void)identifier:(NSString *)identifier replacesActivity:(id)activity;
+    // Tells the loader to replace activity with your Activity
+    // @param identifier The identifier used in registerActivity:identifier:title:
+    // @param activity   Either an NSString or NSRegularExpression used to identify the activity to replace
+    //                   If a NSString, anything activityType that contains that string will be replaced
+    //                   If a NSRegularExpression, activityType strings that return at least one match will be replaced
 
 @end
