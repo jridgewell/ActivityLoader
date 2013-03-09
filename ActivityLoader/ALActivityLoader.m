@@ -10,6 +10,7 @@
 
 @implementation ALActivityLoader
 @dynamic enabledActivities;
+@dynamic enabledActivities, activitiesPlist;
 
 + (instancetype)sharedInstance {
     static dispatch_once_t pred = 0;
@@ -38,9 +39,9 @@
 
 - (NSArray *)enabledActivities {
     if (![self.enabledActivities count]) {
-        NSDictionary *activitiesFromPlist = [NSDictionary dictionaryWithContentsOfFile:kPrefs_File];
         __block NSMutableArray *enabledActivities = [NSMutableArray array];
         
+        NSDictionary *activitiesFromPlist = [self activitiesPlist];
         [activitiesFromPlist enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
             if ([value boolValue]) {
                 id activity =[self.activities objectForKey:key];
@@ -56,4 +57,11 @@
     return self.enabledActivities;
 }
 
+- (NSDictionary *)activitiesPlist {
+    // TODO: Implement method to reread plist on app exit
+    if (!self.activitiesPlist) {
+        self.activitiesPlist = [NSDictionary dictionaryWithContentsOfFile:kPrefs_File];
+    }
+    return self.activitiesPlist;
+}
 @end
