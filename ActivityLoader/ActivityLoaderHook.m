@@ -19,22 +19,20 @@
 CHDeclareClass(UIActivityViewController);
 // - (NSArray *)excludedActivityTypes {
 CHOptimizedMethod(0, self, NSArray *, UIActivityViewController, excludedActivityTypes) {
+    QLog(@"Excluded Activity Types");
     return CHSuper(0, UIActivityViewController, excludedActivityTypes);
 }
 
 // - (id)initWithActivityItems:(NSArray *)activityItems applicationActivities:(NSArray *)applicationActivities
 CHOptimizedMethod(2, self, id, UIActivityViewController, initWithActivityItems, NSArray *, activityItems, applicationActivities, NSArray *, applicationActivities) {
     ALActivityLoader *loader = [ALActivityLoader sharedInstance];
-    NSMutableArray *activities = [NSMutableArray arrayWithArray:applicationActivities];
     NSArray *enabledActivities = [loader enabledActivities];
-    QLog(loader);
-    QLog(enabledActivities);
+    NSMutableArray *activities = [NSMutableArray arrayWithArray:applicationActivities];
+    DLog(@"Got these activities: %@", activities);
     
 	for (id<ALActivity> activity in enabledActivities) {
-//        QLog(activity);
 		[activities addObject:activity];
 	}
-    QLog(activities);
     return CHSuper(2, UIActivityViewController, initWithActivityItems, activityItems, applicationActivities, activities);
 }
 

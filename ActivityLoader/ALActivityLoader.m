@@ -36,18 +36,21 @@
 
 - (NSArray *)enabledActivities {
     if (![self.enabledActivities count]) {
+        QLog(@"Initializing enabled activities");
         __block NSMutableArray *enabledActivities = [NSMutableArray array];
         
         NSDictionary *activitiesFromPlist = [self activitiesPlist];
         [activitiesFromPlist enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+            DLog(@"Checking if %@ should be enabled.", key);
             if ([value boolValue]) {
                 id activity = [self.activities objectForKey:key];
+                DLog(@"Has %@ registered itself?", key);
                 if (activity) {
+                    DLog(@"Enabled activity: %@", activity);
                     [enabledActivities addObject:activity];
                 }
             }
         }];
-        QLog(enabledActivities);
         self.enabledActivities = enabledActivities;
     }
     
@@ -57,6 +60,7 @@
 - (NSDictionary *)activitiesPlist {
     // TODO: Implement method to reread plist on app exit
     if (![self.activitiesPlist count]) {
+        QLog(@"Loading Activities Plist");
         self.activitiesPlist = [NSDictionary dictionaryWithContentsOfFile:kPrefs_File];
     }
     return self.activitiesPlist;
