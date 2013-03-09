@@ -3,7 +3,7 @@ Version: 0.1-0
 Architecture: iphoneos-arm
 Maintainer: JRidgewell
 Depends: firmware (>= 6.0), mobilesubstrate, preferenceloader
-Filename: .//name.ridgewell.activityloader_0.1-0_iphoneos-arm.deb
+Filename: .//debs/name.ridgewell.activityloader_0.1-0_iphoneos-arm.deb
 Size: 74700
 MD5sum: 184446b91df24b2a37c6d3402bf4538f
 SHA1: 216a0c4af89af2f9ee635f15c04343efa8b2c8c7
