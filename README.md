@@ -49,7 +49,7 @@ MyActivity.h
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems;
 - (void)prepareWithActivityItems:(NSArray *)activityItems;
 // Implement ONE AND ONLY ONE of the following.
-- (UIViewController *)activityViewController;
+// - (UIViewController *)activityViewController;
 - (void)performActivity;
 
 @end
@@ -76,9 +76,10 @@ MyActivity.m
 }
 
 + (void)load {
-    [[ALActivityLoader sharedInstance] registerActivity:[MyActivity instance]
-                                             identifier:[self activityType]
-                                                  title:[self activityTitle]];
+	id instance = [MyActivity instance];
+    [[ALActivityLoader sharedInstance] registerActivity:instance
+                                             identifier:[instance activityType]
+                                                  title:[instance activityTitle]];
 }
 
 #pragma mark - MyActivity : UIActivity
