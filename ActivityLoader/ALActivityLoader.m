@@ -124,4 +124,10 @@
     return replace;
 }
 
+- (void)cacheBust {
+    self.activitiesPlist = nil;
+    self.enabledActivities = nil;
+    self.enabledActivityIdentifiers = nil;
+}
+
 @end

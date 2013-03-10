@@ -26,5 +26,6 @@
 - (NSArray *)enabledActivityIdentifiers;
 - (NSDictionary *)activitiesPlist;
 - (BOOL)activityIsReplaced:(UIActivity *)activity;
+- (void)cacheBust;
 
 @end
