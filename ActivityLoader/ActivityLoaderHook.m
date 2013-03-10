@@ -13,7 +13,6 @@
 #import <UIKit/UIActivityViewController.h>
 #import "ALActivityLoader.h"
 
-
 #pragma mark - UIActivityViewController Hook
 
 CHDeclareClass(UIActivityViewController);
@@ -29,15 +28,17 @@ CHOptimizedMethod(2, self, id, UIActivityViewController, initWithActivityItems, 
     NSArray *enabledActivities = [loader enabledActivities];
     NSMutableArray *activities = [NSMutableArray arrayWithArray:applicationActivities];
     DLog(@"Got these activities: %@", activities);
-    
+
     for (id activity in [activities reverseObjectEnumerator]) {
         if ([loader activityIsReplaced:activity]) {
             [activities removeObject:activity];
         }
     }
-	for (id<ALActivity> activity in enabledActivities) {
-		[activities addObject:activity];
-	}
+
+    for (id<ALActivity> activity in enabledActivities) {
+        [activities addObject:activity];
+    }
+
     return CHSuper(2, UIActivityViewController, initWithActivityItems, activityItems, applicationActivities, activities);
 }
 

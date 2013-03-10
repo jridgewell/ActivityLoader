@@ -77,6 +77,7 @@
                 [specifiers addObject:specifier];
             }
         }
+
         _specifiers = specifiers;
     }
 
@@ -86,22 +87,20 @@
 + (id)dictionaryWithFile:(NSString **)plistPath asMutable:(BOOL)asMutable {
     Class class = (asMutable) ? [NSMutableDictionary class] :[NSDictionary class];
     id dict;
-    
+
     if ([*plistPath hasPrefix : @"/"]) {
         *plistPath = [NSString stringWithFormat:@"%@.plist", *plistPath];
     } else {
         *plistPath = [NSString stringWithFormat:@"%@/%@.plist", kPrefs_Path, *plistPath];
     }
-    
+
     if ([[NSFileManager defaultManager] fileExistsAtPath:*plistPath]) {
         dict = [class dictionaryWithContentsOfFile:*plistPath];
     } else {
         dict = [class dictionary];
     }
-    
+
     return dict;
 }
-
-
 
 @end
