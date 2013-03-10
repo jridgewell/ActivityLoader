@@ -1,6 +1,6 @@
 Package: name.ridgewell.activityloader
 Name: ActivityLoader
-Version: 0.2.2-0
+Version: 0.2.3-0
 Description: 
 Section: System
 Depends: firmware (>= 6.0), mobilesubstrate, preferenceloader
