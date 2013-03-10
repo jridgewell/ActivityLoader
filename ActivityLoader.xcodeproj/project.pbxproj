@@ -661,6 +661,7 @@
 				21A473C516E75761009C4578 /* Frameworks */,
 				21A473C616E75761009C4578 /* Headers */,
 				21ACAA5916E7D7910043C24C /* ShellScript */,
+				21F7CA9816EC042D00BFE44B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -750,7 +751,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bundleDir=\"$PROJECT_DIR/$PROJECT/Package/Library/ActivityLoader/$PRODUCT_NAME.bundle\"\nrm -r \"$bundleDir\" 2>/dev/null\nmkdir -p \"$bundleDir\"\ncd \"$PROJECT_DIR\"\nxibs=$(find \"$PRODUCT_NAME/$PRODUCT_NAME\" -name \"*.xib\")\nfor file in $xibs; do\n    filename=\"$(basename $file)\"\n    nib=\"${filename%.*}.nib\"\n    ibtool --errors --warnings --output-format human-readable-text --compile \"$bundleDir/$nib\" \"$file\"\ndone\npngs=$(find \"$PRODUCT_NAME/$PRODUCT_NAME\" -name \"*.png\")\nfor file in $pngs; do\n    filename=\"$(basename $file)\"\n    cp \"$file\" \"$bundleDir/$filename\"\ndone";
+			shellScript = "bundleDir=\"$PROJECT_DIR/$PROJECT/Package/Library/ActivityLoader/$PRODUCT_NAME.bundle\"\nrm -r \"$bundleDir\" 2>/dev/null\nmkdir -p \"$bundleDir\"\ncd \"$PROJECT_DIR\"\nxibs=$(find \"$PRODUCT_NAME/$PRODUCT_NAME\" -name \"*.xib\")\nfor file in $xibs; do\n    filename=\"$(basename $file)\"\n    nib=\"${filename%.*}.nib\"\n    ibtool --errors --warnings --output-format human-readable-text --compile \"$bundleDir/$nib\" \"$file\"\ndone\nfind \"$PRODUCT_NAME/$PRODUCT_NAME\" -name \"*.png\" -print0 | xargs -I file -0 cp \"file\" \"$bundleDir\"";
 		};
 		21ACAA5916E7D7910043C24C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -764,6 +765,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export TARGET_NAME=\"ActivityLoader\"\n/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+		21F7CA9816EC042D00BFE44B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -r lib_header/ 2>/dev/null\nmkdir -p lib_header/\nfind \"$PROJECT_DIR/$PROJECT/Package/usr/\" -type f -print0 | xargs -I file -0 cp \"file\" \"lib_header/\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
