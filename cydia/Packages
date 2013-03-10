@@ -55,3 +55,22 @@ Dev: Justin Ridgewell
 Icon: http://jridgewell.github.com/ActivityLoader/icon.png
 Name: ActivityLoader
 
+Package: name.ridgewell.activityloader
+Version: 0.2.2-0
+Architecture: iphoneos-arm
+Maintainer: JRidgewell
+Depends: firmware (>= 6.0), mobilesubstrate, preferenceloader
+Filename: .//debs/name.ridgewell.activityloader_0.2.2-0_iphoneos-arm.deb
+Size: 95476
+MD5sum: 63d3c167427dded4f095bfa6a8bdbc4e
+SHA1: d2356e2cd75da556597feb51808d6de9281aa0cc
+SHA256: abe361c183071f26f6f940d1f0d244d58c451cfba53c61430cc0f8682379538f
+Section: System
+Priority: optional
+Homepage: http://jridgewell.github.com/ActivityLoader
+Author: Justin Ridgewell
+Depiction: Add custom UIActivities to any app!
+Dev: Justin Ridgewell
+Icon: http://jridgewell.github.com/ActivityLoader/icon.png
+Name: ActivityLoader
+
