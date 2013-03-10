@@ -8,6 +8,8 @@
 
 #import "ALActivityLoader.h"
 #import <UIKit/UIActivity.h>
+#import "NSArray+Funcussion.h"
+#import "NSDictionary+Funcussion.h"
 
 @implementation ALActivityLoader
 
@@ -47,21 +49,17 @@
 - (NSArray *)enabledActivityIdentifiers {
     if (![self.enabledActivityIdentifiers count]) {
         QLog(@"Initializing enabled activities");
-        __block NSMutableArray *enabledIdentifiers = [NSMutableArray array];
+        __block NSDictionary *activities = self.activities;
         NSDictionary *activitiesFromPlist = [self activitiesPlist];
-
-        [activitiesFromPlist enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
-            DLog(@"Checking if %@ should be enabled.", key);
-            if ([value boolValue]) {
-                id activity = [self.activities objectForKey:key];
-                DLog(@"Has %@ registered itself?", key);
-                if (activity) {
-                    DLog(@"Enabled activity: %@", key);
-                    [enabledIdentifiers addObject:key];
-                }
-            }
-        }
-        ];
+        
+        NSArray *enabledIdentifiers = [[activitiesFromPlist filter:^BOOL(id identifier, id enabled) {
+            DLog(@"Checking if %@ should be enabled.", identifier);
+            return ([enabled boolValue] && [activities objectForKey:identifier]);
+        }] mapToArray:^id(id identifier, id enabled) {
+            DLog(@"Enabled activity: %@", identifier);
+            return identifier;
+        }];
+        
         self.enabledActivityIdentifiers = enabledIdentifiers;
     }
 
@@ -70,10 +68,11 @@
 
 - (NSArray *)enabledActivities {
     if (![self.enabledActivities count]) {
-        NSMutableArray *enabledActivities = [NSMutableArray array];
-        for (NSString *identifier in [self enabledActivityIdentifiers]) {
-            [enabledActivities addObject:[self.activities objectForKey:identifier]];
-        }
+        __block NSDictionary *activities = self.activities;
+        __block NSArray *enabledIdentifiers = [self enabledActivityIdentifiers];
+        NSArray *enabledActivities = [enabledIdentifiers map:^id(id identifier) {
+            return [activities objectForKey:identifier];
+        }];
 
         self.enabledActivities = enabledActivities;
     }
@@ -98,25 +97,23 @@
     __block NSArray *enabledActivityIdentifiers = [self enabledActivityIdentifiers];
 
     DLog(@"Checking if %@ has been replaced", activityType);
-    [self.replacedActivities enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id key, id obj, BOOL *stop) {
-        DLog(@"Did %@ replace %@?", key, activityType);
-        if ([enabledActivityIdentifiers containsObject:key]) {
-            if ([obj isKindOfClass:[NSString class]]) {
-                if ([activityType rangeOfString:obj].location != NSNotFound) {
-                    replace = YES;
-                }
-            } else if ([obj isKindOfClass:[NSRegularExpression class]]) {
-                if ([obj numberOfMatchesInString:activityType
-                                         options:0
-                                           range:NSMakeRange(0, length)] > 0)
-                {
-                    replace = YES;
-                }
+    [self.replacedActivities enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id identifier, id pattern, BOOL *stop) {
+        if ([enabledActivityIdentifiers containsObject:identifier]) {
+            DLog(@"Did %@ replace %@?", identifier, activityType);
+            if ([pattern isKindOfClass:[NSString class]]) {
+                pattern = [NSRegularExpression regularExpressionWithPattern:pattern
+                                                                    options:NSRegularExpressionIgnoreMetacharacters
+                                                                      error:NULL];
             }
-
-            if (replace) {
-                DLog(@"%@ replaced %@", key, activityType);
-                stop = YES;
+            if ([pattern isKindOfClass:[NSRegularExpression class]]) {
+                NSUInteger numMatches = [pattern numberOfMatchesInString:activityType
+                                                                 options:0
+                                                                   range:NSMakeRange(0, length)];
+                if (numMatches > 0) {
+                    DLog(@"%@ replaced %@", identifier, activityType);
+                    replace = YES;
+                    stop = YES;
+                }
             }
         }
     }
